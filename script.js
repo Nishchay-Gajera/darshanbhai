@@ -41,32 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Magnetic Button Effect
-        const magnetics = document.querySelectorAll('.magnetic');
-        magnetics.forEach(btn => {
-            btn.addEventListener('mousemove', function(e) {
-                const position = btn.getBoundingClientRect();
-                const x = e.pageX - position.left - position.width / 2;
-                const y = e.pageY - position.top - position.height / 2;
-                const strength = btn.dataset.strength || 20;
-
-                gsap.to(btn, {
-                    x: x / position.width * strength,
-                    y: y / position.height * strength,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-
-            btn.addEventListener('mouseleave', function() {
-                gsap.to(btn, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.5,
-                    ease: "elastic.out(1, 0.3)"
-                });
-            });
-        });
     }
 
     // GSAP Scroll Animations

@@ -279,30 +279,60 @@
         <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
     <script>
-        // Filter logic & Dynamic Stack offset generation
+        // Filter logic & GSAP Parallax Stack
         document.addEventListener('DOMContentLoaded', () => {
             const filterBtns = document.querySelectorAll('.cat-btn');
             const stackCards = document.querySelectorAll('.stack-card');
+            
+            // Register GSAP plugins
+            gsap.registerPlugin(ScrollTrigger);
 
-            function updateStackPositions() {
-                // Disable stickiness/offsets on mobile layouts where it stacks vertically natively
+            let stackTriggers = [];
+
+            function initStackAnimation() {
+                // Kill old triggers
+                stackTriggers.forEach(t => t.kill());
+                stackTriggers = [];
+
                 if (window.innerWidth <= 900) {
-                    stackCards.forEach(card => card.style.top = 'auto');
+                    stackCards.forEach(card => {
+                        card.style.top = 'auto';
+                        card.style.transform = 'none';
+                        card.style.zIndex = 'auto';
+                    });
                     return;
                 }
-                
-                let visibleCount = 0;
-                const topOffsetBase = 120; // Distance from top of screen
-                const peekGap = 40;        // How much of the previous card shows
 
-                stackCards.forEach(card => {
-                    if (!card.classList.contains('hidden')) {
-                        // Apply calculated top and z-index based on visibility order
-                        card.style.top = `${topOffsetBase + (visibleCount * peekGap)}px`;
-                        card.style.zIndex = visibleCount + 1;
-                        visibleCount++;
+                const visibleCards = Array.from(stackCards).filter(c => !c.classList.contains('hidden'));
+                const topOffsetBase = 120;
+                const peekGap = 40;
+
+                visibleCards.forEach((card, index) => {
+                    // Initial static positioning
+                    card.style.top = `${topOffsetBase + (index * peekGap)}px`;
+                    card.style.zIndex = index + 1;
+
+                    // GSAP Scroll animation for 3D stacking
+                    if (index < visibleCards.length - 1) {
+                        const trigger = ScrollTrigger.create({
+                            trigger: card,
+                            start: `top ${topOffsetBase + (index * peekGap)}px`,
+                            endTrigger: visibleCards[visibleCards.length - 1],
+                            end: `top ${topOffsetBase + ((visibleCards.length - 1) * peekGap)}px`,
+                            pin: false,
+                            scrub: true,
+                            animation: gsap.to(card, {
+                                scale: 1 - ((visibleCards.length - 1 - index) * 0.05),
+                                filter: "brightness(0.7)",
+                                transformOrigin: "top center",
+                                ease: "none"
+                            })
+                        });
+                        stackTriggers.push(trigger);
                     }
                 });
             }
@@ -324,16 +354,21 @@
                         }
                     });
 
-                    // Recalculate sticky offsets for remaining visible cards
-                    setTimeout(updateStackPositions, 50);
+                    // Recalculate GSAP animations after filter
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                        initStackAnimation();
+                    }, 50);
                 });
             });
 
-            // Run initial position calculation
-            updateStackPositions();
+            // Initialize
+            setTimeout(initStackAnimation, 100);
             
-            // Re-run on resize to ensure mobile breaks correctly
-            window.addEventListener('resize', updateStackPositions);
+            window.addEventListener('resize', () => {
+                ScrollTrigger.refresh();
+                initStackAnimation();
+            });
         });
     </script>
 </body>
