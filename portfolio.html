@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Stack Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* SIMPLE CATEGORY FILTER */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+        
+        .cat-btn {
+            padding: 10px 22px;
+            border-radius: 100px;
+            border: 1px solid var(--bento-border);
+            background: var(--bento-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cat-btn:hover {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+        
+        .cat-btn.active {
+            background: var(--text-primary);
+            color: white;
+            border-color: var(--text-primary);
+        }
+
+        /* STACK LAYOUT */
+        .stack-wrapper {
+            position: relative;
+            padding-bottom: 100px;
+        }
+
+        .stack-card {
+            position: sticky;
+            height: 70vh;
+            min-height: 550px;
+            margin-bottom: 40px;
+            background: var(--bento-bg); /* Clean white */
+            border: 1px solid var(--bento-border);
+            border-top: 1px solid rgba(255,255,255,0.8); /* Subtle highlight */
+            border-radius: 30px; 
+            box-shadow: 0 -15px 40px rgba(0,0,0,0.06); /* Soft elegant shadow */
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
+            transition: top 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .stack-card.hidden {
+            display: none !important;
+        }
+        
+        .sc-info {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background: var(--bento-bg);
+        }
+
+        /* Subtle ambient glow in the text panel matching the warm theme */
+        .sc-info::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at top left, rgba(234, 88, 12, 0.03), transparent 50%);
+            pointer-events: none;
+        }
+
+        .sc-img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Soft gradient overlay on the image to blend it with white */
+        .sc-img-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(255,255,255,0.5) 0%, transparent 30%);
+            pointer-events: none;
+        }
+
+        .sc-img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .stack-card:hover .sc-img {
+            transform: scale(1.08);
+        }
+
+        .sc-cat { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--accent-orange); letter-spacing: 3px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+        .sc-cat::before { content: ''; width: 40px; height: 1px; background: var(--accent-orange); }
+
+        .sc-title { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 25px; color: var(--text-primary); position: relative;}
+        .sc-desc { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 40px; max-width: 95%; position: relative;}
+        
+        /* Pill improvements */
+        .p-card-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 45px; position: relative; }
+        .p-card-tags span { 
+            padding: 8px 18px; 
+            border-radius: 100px; 
+            font-size: 0.8rem; 
+            color: var(--text-primary); 
+            background: var(--bg-color); 
+            border: 1px solid var(--bento-border);
+            font-weight: 600;
+        }
+        
+        @media(max-width: 900px) {
+            .stack-card { grid-template-columns: 1fr; height: auto; display: flex; flex-direction: column-reverse; }
+            .sc-img-wrapper { height: 300px; }
+            .sc-info { padding: 30px; }
+            .sc-title { font-size: 2.5rem; }
+            .stack-card { position: relative; top: auto !important; margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="floating-nav">
+        <div class="nav-brand">Darshan.</div>
+        <div class="nav-links">
+            <a href="index.html" class="magnetic" data-strength="15">Home</a>
+            <a href="index.html#services" class="magnetic" data-strength="15">About Me</a>
+            <a href="services.html" class="magnetic" data-strength="15">Services</a>
+            <a href="#" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">Project</a>
+            <a href="index.html#contact" class="magnetic" data-strength="15">Contact Us</a>
+        </div>
+        <div class="time-module" id="local-time">Loading...</div>
+    </nav>
+
+    <main class="bento-container" style="margin-top: 20px;">
+        <div class="section-title text-center" style="text-align: center; margin-bottom: 40px;">
+            <p class="section-eyebrow">Project Showcase</p>
+            <h1 style="font-size: 4.5rem; letter-spacing: -2px;">Selected Work.</h1>
+            <p class="muted-text" style="font-size: 1.1rem; margin-top: 15px;">Scroll down to view case studies. Filter by category below.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="category-filter fade-in">
+            <button class="cat-btn active" data-filter="all">All Projects</button>
+            <button class="cat-btn" data-filter="software"><i class="fa-solid fa-laptop-code"></i> Software Engineering</button>
+            <button class="cat-btn" data-filter="ecommerce"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</button>
+            <button class="cat-btn" data-filter="seo"><i class="fa-solid fa-magnifying-glass-chart"></i> Technical SEO</button>
+            <button class="cat-btn" data-filter="uiux"><i class="fa-solid fa-pen-nib"></i> UI/UX Design</button>
+            <button class="cat-btn" data-filter="graphic"><i class="fa-solid fa-bezier-curve"></i> Graphic Design</button>
+            <button class="cat-btn" data-filter="wordpress"><i class="fa-brands fa-wordpress"></i> WordPress</button>
+        </div>
+
+        <!-- Stack Layout Container -->
+        <div class="stack-wrapper fade-in" id="stackWrapper">
+            
+            <!-- Software Project -->
+            <div class="stack-card" data-category="software">
+                <div class="sc-info">
+                    <div class="sc-cat">Software Engineering</div>
+                    <h2 class="sc-title">Nexus Analytics Platform</h2>
+                    <p class="sc-desc">Re-architecting a monolithic PHP backend to a modern React and Node.js microservices stack, dropping page load times by 80%.</p>
+                    <div class="p-card-tags" style="margin-bottom: 30px;">
+                        <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>WebSockets</span>
+                    </div>
+                    <a href="index.html#contact" class="btn-primary magnetic" data-strength="15" style="align-self: flex-start;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="sc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" class="sc-img">
+                </div>
+            </div>
+
+            <!-- E-Commerce Project -->
+            <div class="stack-card" data-category="ecommerce">
+                <div class="sc-info">
+                    <div class="sc-cat">E-Commerce Solutions</div>
+                    <h2 class="sc-title">Global ShopFlow</h2>
+                    <p class="sc-desc">A headless e-commerce solution using Next.js and Shopify Plus. Implemented localized checkout flows that scaled international sales by 45%.</p>
+                    <div class="p-card-tags" style="margin-bottom: 30px;">
+                        <span>Next.js</span><span>Shopify Plus</span><span>Tailwind</span>
+                    </div>
+                    <a href="index.html#contact" class="btn-primary magnetic" data-strength="15" style="align-self: flex-start;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="sc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop" class="sc-img">
+                </div>
+            </div>
+
+            <!-- SEO Project -->
+            <div class="stack-card" data-category="seo">
+                <div class="sc-info">
+                    <div class="sc-cat">Technical SEO</div>
+                    <h2 class="sc-title">RankForge Framework</h2>
+                    <p class="sc-desc">End-to-end SEO overhaul for a B2B brand. Implemented programmatic category pages, perfect Core Web Vitals scores, and deep schema injection.</p>
+                    <div class="p-card-tags" style="margin-bottom: 30px;">
+                        <span>Tech SEO</span><span>Python Scripting</span><span>Performance</span>
+                    </div>
+                    <a href="index.html#contact" class="btn-primary magnetic" data-strength="15" style="align-self: flex-start;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="sc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1200&auto=format&fit=crop" class="sc-img">
+                </div>
+            </div>
+
+            <!-- UI/UX Project -->
+            <div class="stack-card" data-category="uiux">
+                <div class="sc-info">
+                    <div class="sc-cat">UI / UX Design</div>
+                    <h2 class="sc-title">FlowApp Experience</h2>
+                    <p class="sc-desc">Complete UX overhaul of an enterprise fitness application. Established a scalable design system that increased user retention by 40%.</p>
+                    <div class="p-card-tags" style="margin-bottom: 30px;">
+                        <span>Figma</span><span>Design Tokens</span><span>Prototyping</span>
+                    </div>
+                    <a href="index.html#contact" class="btn-primary magnetic" data-strength="15" style="align-self: flex-start;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="sc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1200&auto=format&fit=crop" class="sc-img">
+                </div>
+            </div>
+
+            <!-- Graphic Design Project -->
+            <div class="stack-card" data-category="graphic">
+                <div class="sc-info">
+                    <div class="sc-cat">Graphic Design</div>
+                    <h2 class="sc-title">Aura Brand Identity</h2>
+                    <p class="sc-desc">Full brand identity redesign for a Series-A fintech startup, including logo, color theory, typography scale, and investor pitch decks.</p>
+                    <div class="p-card-tags" style="margin-bottom: 30px;">
+                        <span>Illustrator</span><span>Photoshop</span><span>Branding</span>
+                    </div>
+                    <a href="index.html#contact" class="btn-primary magnetic" data-strength="15" style="align-self: flex-start;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="sc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1200&auto=format&fit=crop" class="sc-img">
+                </div>
+            </div>
+
+            <!-- WordPress Project -->
+            <div class="stack-card" data-category="wordpress">
+                <div class="sc-info">
+                    <div class="sc-cat">WordPress & CMS</div>
+                    <h2 class="sc-title">StoreMax Custom Engine</h2>
+                    <p class="sc-desc">Custom, lightweight WordPress theme built from scratch using pure PHP and ACF. Replaced a bloated page builder, resulting in a 95+ PageSpeed score.</p>
+                    <div class="p-card-tags" style="margin-bottom: 30px;">
+                        <span>PHP</span><span>ACF Pro</span><span>Custom Theme</span>
+                    </div>
+                    <a href="index.html#contact" class="btn-primary magnetic" data-strength="15" style="align-self: flex-start;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="sc-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1200&auto=format&fit=crop" class="sc-img">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter logic & Dynamic Stack offset generation
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.cat-btn');
+            const stackCards = document.querySelectorAll('.stack-card');
+
+            function updateStackPositions() {
+                // Disable stickiness/offsets on mobile layouts where it stacks vertically natively
+                if (window.innerWidth <= 900) {
+                    stackCards.forEach(card => card.style.top = 'auto');
+                    return;
+                }
+                
+                let visibleCount = 0;
+                const topOffsetBase = 120; // Distance from top of screen
+                const peekGap = 40;        // How much of the previous card shows
+
+                stackCards.forEach(card => {
+                    if (!card.classList.contains('hidden')) {
+                        // Apply calculated top and z-index based on visibility order
+                        card.style.top = `${topOffsetBase + (visibleCount * peekGap)}px`;
+                        card.style.zIndex = visibleCount + 1;
+                        visibleCount++;
+                    }
+                });
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Filter cards
+                    stackCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    // Recalculate sticky offsets for remaining visible cards
+                    setTimeout(updateStackPositions, 50);
+                });
+            });
+
+            // Run initial position calculation
+            updateStackPositions();
+            
+            // Re-run on resize to ensure mobile breaks correctly
+            window.addEventListener('resize', updateStackPositions);
+        });
+    </script>
+</body>
+</html>

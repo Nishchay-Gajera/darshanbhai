@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Patel | Digital Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <nav class="floating-nav">
+        <div class="nav-brand">Darshan.</div>
+        <div class="nav-links">
+            <a href="#dashboard" class="magnetic" data-strength="15">Home</a>
+            <a href="#services" class="magnetic" data-strength="15">About Me</a>
+            <a href="services.html" class="magnetic" data-strength="15">Services</a>
+            <a href="portfolio.html" class="magnetic" data-strength="15">Project</a>
+            <a href="#contact" class="magnetic" data-strength="15">Contact Us</a>
+        </div>
+        <div class="time-module" id="local-time">Loading...</div>
+    </nav>
+
+    <!-- First Section (Dashboard Container from screenshot) -->
+    <main class="dashboard-container" id="dashboard">
+        <!-- Hero Module -->
+        <div class="bento-module hero-module fade-in">
+            <div class="status-badge">
+                <span class="pulse-dot"></span> Available for New Opportunities
+            </div>
+            <h1>Engineering Digital <br><span class="accent-text">Ecosystems.</span></h1>
+            <p class="hero-subtext">I am Darshan Patel, a Senior Full-Stack Engineer. I architect scalable
+                infrastructure and high-conversion interfaces to drive measurable business growth.</p>
+            <a href="#contact" class="btn-primary magnetic" data-strength="30">
+                Initiate Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- Location Module -->
+        <div class="bento-module location-module dark-module fade-in">
+            <div class="module-header-alt">
+                <h3>Global Reach</h3>
+                <div class="reach-badge">
+                    <span class="green-dot"></span> Darshan's Workspace
+                </div>
+            </div>
+            <div class="globe-visual" id="globe-container"></div>
+        </div>
+
+        <!-- Experience Module -->
+        <div class="bento-module exp-module fade-in">
+            <h2><span class="counter" data-target="10">0</span><span class="accent-orange">+</span></h2>
+            <p>Years of Engineering<br>Excellence</p>
+        </div>
+
+        <!-- Tech Stack Module -->
+        <div class="bento-module stack-module fade-in">
+            <h3>Core Stack</h3>
+            <div class="stack-grid">
+                <div class="stack-item magnetic" data-strength="10">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React</span>
+                </div>
+                <div class="stack-item magnetic" data-strength="10">
+                    <i class="fa-brands fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="stack-item magnetic" data-strength="10">
+                    <i class="fa-brands fa-wordpress"></i>
+                    <span>WordPress</span>
+                </div>
+                <div class="stack-item magnetic" data-strength="10">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Tech SEO</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Philosophy Module -->
+        <div class="bento-module philosophy-module fade-in">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <h3>My Philosophy</h3>
+            <p>Bridging the critical gap between technical execution and business strategy. I don't just write code; I
+                build systems that generate leads, maximize ROI, and scale effortlessly.</p>
+        </div>
+    </main>
+
+    <!-- THE REST OF BENTO THEME (Services, Portfolio, Contact) -->
+    <main class="bento-container" style="margin-top: 20px;">
+        <!-- Section: Services -->
+        <section id="services" class="services-section fade-in">
+            <div class="section-title"
+                style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px;">
+                <h2>Services</h2>
+                <a href="services.html" class="btn-primary magnetic" data-strength="15"
+                    style="padding: 10px 20px; font-size: 0.85rem;">View All Services <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="services-bento">
+                <div class="bento-box service-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Custom Development</h3>
+                    <p>Scalable React and Node.js applications tailored to your business logic.</p>
+                </div>
+                <div class="bento-box service-item">
+                    <i class="fa-brands fa-wordpress-simple"></i>
+                    <h3>WordPress Solutions</h3>
+                    <p>High-converting, optimized custom themes and e-commerce platforms.</p>
+                </div>
+                <div class="bento-box service-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>Technical SEO</h3>
+                    <p>Data-driven optimization to rank higher and attract organic client leads.</p>
+                </div>
+                <div class="bento-box service-item">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>10+ years of experience crafting intuitive, modern user interfaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Portfolio -->
+        <section id="portfolio" class="portfolio-section fade-in">
+            <div class="section-title"
+                style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <p class="section-eyebrow">Portfolio</p>
+                    <h2>Selected Work</h2>
+                </div>
+                <a href="portfolio.html" class="btn-ghost">View All Work <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Stack Filter Tabs -->
+            <div class="stack-filter" id="stackFilter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="react"><i class="fa-brands fa-react"></i> React</button>
+                <button class="filter-btn" data-filter="wordpress"><i class="fa-brands fa-wordpress"></i>
+                    WordPress</button>
+                <button class="filter-btn" data-filter="seo"><i class="fa-solid fa-magnifying-glass"></i> SEO</button>
+                <button class="filter-btn" data-filter="fullstack"><i class="fa-solid fa-layer-group"></i>
+                    Full-Stack</button>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="portfolio-grid" id="portfolioGrid">
+
+                <!-- Card 1: ShopFlow — WordPress -->
+                <div class="p-card" data-stack="wordpress">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #21759b, #4a90d9);"></div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon"><i class="fa-brands fa-wordpress"></i></div>
+                            <span class="p-card-cat">E-Commerce</span>
+                        </div>
+                        <h3 class="p-card-title">ShopFlow</h3>
+                        <p class="p-card-desc">High-converting WooCommerce store with custom checkout flow, built for a
+                            fashion retail brand.</p>
+                        <div class="p-card-tags">
+                            <span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>CSS3</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">+45%</span><span class="p-stat-label">Conversion
+                                Rate</span></div>
+                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2: NexusDash — React -->
+                <div class="p-card" data-stack="react">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
+                    </div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
+                            <span class="p-card-cat">SaaS Dashboard</span>
+                        </div>
+                        <h3 class="p-card-title">NexusDash</h3>
+                        <p class="p-card-desc">Real-time BI dashboard processing 2M+ data points daily for enterprise
+                            clients with live charts.</p>
+                        <div class="p-card-tags">
+                            <span>React</span><span>Node.js</span><span>MongoDB</span><span>WebSockets</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">2M+</span><span class="p-stat-label">Daily Data
+                                Points</span></div>
+                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3: RankForge — SEO -->
+                <div class="p-card" data-stack="seo">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #134e5e, #71b280);"></div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon" style="color: #71b280;"><i
+                                    class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <span class="p-card-cat">SEO &amp; Growth</span>
+                        </div>
+                        <h3 class="p-card-title">RankForge</h3>
+                        <p class="p-card-desc">End-to-end Technical SEO overhaul for a B2B SaaS brand — schema, CWV, and
+                            link architecture.</p>
+                        <div class="p-card-tags">
+                            <span>Tech SEO</span><span>Core Web Vitals</span><span>Schema</span><span>Analytics</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">+320%</span><span class="p-stat-label">Organic
+                                Traffic</span></div>
+                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 4: LeadPulse — Full-Stack + React -->
+                <div class="p-card" data-stack="fullstack react">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #1c0a00, #7c2d12);"></div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon" style="color: #EA580C;"><i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <span class="p-card-cat">Full-Stack CRM</span>
+                        </div>
+                        <h3 class="p-card-title">LeadPulse</h3>
+                        <p class="p-card-desc">Custom CRM with automated lead scoring and email workflows. Scaled to
+                            10k+ active users.</p>
+                        <div class="p-card-tags">
+                            <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">−60%</span><span class="p-stat-label">Sales
+                                Cycle</span></div>
+                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 5: StoreMax — WordPress -->
+                <div class="p-card" data-stack="wordpress">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #2d1b69, #6d28d9);"></div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon" style="color: #a78bfa;"><i class="fa-brands fa-wordpress"></i>
+                            </div>
+                            <span class="p-card-cat">WordPress Theme</span>
+                        </div>
+                        <h3 class="p-card-title">StoreMax</h3>
+                        <p class="p-card-desc">Custom Elementor-free WordPress theme for a D2C brand — blazing fast, 95+
+                            PageSpeed score.</p>
+                        <div class="p-card-tags">
+                            <span>WordPress</span><span>ACF</span><span>Custom PHP</span><span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">95+</span><span class="p-stat-label">PageSpeed
+                                Score</span></div>
+                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 6: VisualAPI — Full-Stack -->
+                <div class="p-card" data-stack="fullstack">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e);"></div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon" style="color: #818cf8;"><i class="fa-solid fa-code-branch"></i>
+                            </div>
+                            <span class="p-card-cat">API Platform</span>
+                        </div>
+                        <h3 class="p-card-title">VisualAPI</h3>
+                        <p class="p-card-desc">Scalable REST API platform with JWT auth, rate limiting, and a React
+                            developer portal for clients.</p>
+                        <div class="p-card-tags">
+                            <span>Node.js</span><span>Express</span><span>React</span><span>Redis</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">50k+</span><span class="p-stat-label">API
+                                Calls/Day</span></div>
+                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+            </div><!-- /portfolio-grid -->
+        </section>
+
+
+        <!-- Section: Work Process -->
+        <section id="process" class="process-section fade-in">
+            <div class="section-title">
+                <h2>The Methodology</h2>
+            </div>
+            <div class="bento-box" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <div
+                        style="font-size: 3rem; font-weight: 800; color: rgba(234, 88, 12, 0.15); margin-bottom: 5px; line-height: 1;">
+                        01</div>
+                    <h3 style="margin-bottom: 10px;">Discovery</h3>
+                    <p class="muted-text">Deep dive into business goals, architecture planning, and technical
+                        requirements gathering.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <div
+                        style="font-size: 3rem; font-weight: 800; color: rgba(234, 88, 12, 0.15); margin-bottom: 5px; line-height: 1;">
+                        02</div>
+                    <h3 style="margin-bottom: 10px;">Architecture</h3>
+                    <p class="muted-text">Crafting the UI/UX experience and architecting the scalable database schema
+                        and API structure.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <div
+                        style="font-size: 3rem; font-weight: 800; color: rgba(234, 88, 12, 0.15); margin-bottom: 5px; line-height: 1;">
+                        03</div>
+                    <h3 style="margin-bottom: 10px;">Development</h3>
+                    <p class="muted-text">Agile engineering with rigorous testing, clean code practices, and milestone
+                        deployments.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <div
+                        style="font-size: 3rem; font-weight: 800; color: rgba(234, 88, 12, 0.15); margin-bottom: 5px; line-height: 1;">
+                        04</div>
+                    <h3 style="margin-bottom: 10px;">Optimization</h3>
+                    <p class="muted-text">Performance tuning, SEO implementation, and final security audits before the
+                        hard launch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Testimonials -->
+        <section id="testimonials" class="testimonials-section fade-in">
+            <div class="section-title">
+                <h2>Client Feedback</h2>
+            </div>
+            <div class="services-bento" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="bento-box">
+                    <div style="color: #F59E0B; margin-bottom: 15px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p
+                        style="font-style: italic; margin-bottom: 20px; color: var(--text-secondary); font-size: 0.95rem;">
+                        "Darshan completely transformed our digital presence. His attention to detail and ability to
+                        scale our infrastructure was exactly what we needed to hit our Q3 goals."</p>
+                    <div>
+                        <h4 style="margin-bottom: 2px;">Sarah Jenkins</h4>
+                        <p class="muted-text" style="font-size: 0.8rem;">CTO, TechFlow</p>
+                    </div>
+                </div>
+                <div class="bento-box">
+                    <div style="color: #F59E0B; margin-bottom: 15px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p
+                        style="font-style: italic; margin-bottom: 20px; color: var(--text-secondary); font-size: 0.95rem;">
+                        "One of the few engineers who truly understands business strategy. The React application he
+                        built increased our conversion rate by 45% in just two months."</p>
+                    <div>
+                        <h4 style="margin-bottom: 2px;">Marcus Chen</h4>
+                        <p class="muted-text" style="font-size: 0.8rem;">Founder, Elevate</p>
+                    </div>
+                </div>
+                <div class="bento-box">
+                    <div style="color: #F59E0B; margin-bottom: 15px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p
+                        style="font-style: italic; margin-bottom: 20px; color: var(--text-secondary); font-size: 0.95rem;">
+                        "Exceptional work on our Technical SEO and core web vitals. We went from struggling to rank to
+                        dominating the first page for our primary keywords."</p>
+                    <div>
+                        <h4 style="margin-bottom: 2px;">Elena Rodriguez</h4>
+                        <p class="muted-text" style="font-size: 0.8rem;">Director, Nexus Group</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="contact" class="contact-section fade-in">
+            <div class="bento-box contact-wrapper">
+                <div class="contact-info">
+                    <h2>Ready to scale?</h2>
+                    <p>Let's build a product that drives results. Drop me a line.</p>
+                    <div class="direct-contact">
+                        <p><i class="fa-solid fa-envelope"></i> hello@darshanpatel.dev</p>
+                    </div>
+                </div>
+                <form class="contact-form"
+                    onsubmit="event.preventDefault(); alert('Lead form submitted successfully!');">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Tell me about your project and goals" rows="4" required></textarea>
+                    <button type="submit" class="submit-btn magnetic" data-strength="20">Send Message <i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById("globe-container");
+            if (container) {
+                // Determine container width for initial setup
+                const width = container.offsetWidth || 300;
+                const height = container.offsetHeight || 300;
+
+                const globe = Globe()
+                    (container)
+                    .width(width)
+                    .height(height)
+                    .backgroundColor('rgba(0,0,0,0)')
+                    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg') // Much clearer map with city lights
+                    .showAtmosphere(true)
+                    .atmosphereColor('#1e40af')
+                    .atmosphereAltitude(0.2)
+                    .htmlElementsData([
+                        { lat: 23.0225, lng: 72.5714 } // Ahmedabad
+                    ])
+                    .htmlElement(d => {
+                        const el = document.createElement('div');
+                        el.innerHTML = `
+                            <div style="position: relative; display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%);">
+                                <div style="position: absolute; width: 40px; height: 40px; background: rgba(59, 130, 246, 0.4); border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                <span style="font-size: 28px; filter: drop-shadow(0 0 15px rgba(255, 234, 0, 0.8)); z-index: 1;">👋</span>
+                            </div>
+                        `;
+                        return el;
+                    });
+
+                // Configure rotation and initial position
+                globe.controls().autoRotate = true;
+                globe.controls().autoRotateSpeed = 0.2; // VERY slow so it stays on Ahmedabad when loaded
+                globe.controls().enableZoom = true; // Enabled user zoom functionality
+
+                // Point camera to India initially, perfect view of the world centered on Ahmedabad
+                globe.pointOfView({ lat: 23.0225, lng: 72.5714, altitude: 2.2 }, 1000);
+
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    if (container.offsetWidth && container.offsetHeight) {
+                        globe.width(container.offsetWidth).height(container.offsetHeight);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
