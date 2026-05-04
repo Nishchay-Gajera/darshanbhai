@@ -33,6 +33,7 @@ html {
 body {
     padding: 40px 5%;
     line-height: 1.6;
+    cursor: default;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -271,12 +272,12 @@ a {
 .globe-visual canvas {
     width: 100% !important;
     height: 100% !important;
-    cursor: grab;
+    cursor: default;
     object-fit: cover;
 }
 
 .globe-visual canvas:active {
-    cursor: grabbing;
+    cursor: default;
 }
 
 .exp-module {
