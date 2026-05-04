@@ -13,14 +13,12 @@
 
 <body>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
 
     <nav class="floating-nav">
         <div class="nav-brand">Darshan.</div>
         <div class="nav-links">
             <a href="#dashboard" class="magnetic" data-strength="15">Home</a>
-            <a href="#services" class="magnetic" data-strength="15">About Me</a>
+            <a href="about.html" class="magnetic" data-strength="15">About Me</a>
             <a href="services.html" class="magnetic" data-strength="15">Services</a>
             <a href="portfolio.html" class="magnetic" data-strength="15">Project</a>
             <a href="#contact" class="magnetic" data-strength="15">Contact Us</a>
@@ -138,154 +136,137 @@
                 <a href="portfolio.html" class="btn-ghost">View All Work <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
-            <!-- Stack Filter Tabs -->
-            <div class="stack-filter" id="stackFilter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="react"><i class="fa-brands fa-react"></i> React</button>
-                <button class="filter-btn" data-filter="wordpress"><i class="fa-brands fa-wordpress"></i>
-                    WordPress</button>
-                <button class="filter-btn" data-filter="seo"><i class="fa-solid fa-magnifying-glass"></i> SEO</button>
-                <button class="filter-btn" data-filter="fullstack"><i class="fa-solid fa-layer-group"></i>
-                    Full-Stack</button>
+            <!-- Category Filter Tabs -->
+            <div class="stack-filter category-filter" id="stackFilter" style="margin-bottom: 40px; justify-content: center;">
+                <button class="filter-btn cat-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn cat-btn" data-filter="industrial"><i class="fa-solid fa-industry"></i> Industrial & Trading</button>
+                <button class="filter-btn cat-btn" data-filter="ecommerce"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</button>
+                <button class="filter-btn cat-btn" data-filter="corporate"><i class="fa-solid fa-building"></i> Corporate</button>
+                <button class="filter-btn cat-btn" data-filter="services"><i class="fa-solid fa-concierge-bell"></i> Services</button>
+                <button class="filter-btn cat-btn" data-filter="digital"><i class="fa-solid fa-laptop-code"></i> Digital Agency</button>
+                <button class="filter-btn cat-btn" data-filter="tech"><i class="fa-solid fa-microchip"></i> Tech Platforms</button>
             </div>
 
             <!-- Project Cards Grid -->
             <div class="portfolio-grid" id="portfolioGrid">
 
-                <!-- Card 1: ShopFlow — WordPress -->
-                <div class="p-card" data-stack="wordpress">
+                <!-- Card 1: Weskini -->
+                <div class="p-card" data-stack="ecommerce">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);"></div>
+                    <div class="p-card-body">
+                        <div class="p-card-top">
+                            <div class="p-stack-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
+                            <span class="p-card-cat">E-Commerce</span>
+                        </div>
+                        <h3 class="p-card-title">Weskini</h3>
+                        <p class="p-card-desc">A premium, headless E-Commerce platform designed for optimal user experience and seamless shopping.</p>
+                        <div class="p-card-tags">
+                            <span>React</span><span>Shopify Plus</span><span>Headless</span>
+                        </div>
+                    </div>
+                    <div class="p-card-footer">
+                        <div class="p-stat"><span class="p-stat-num">-3s</span><span class="p-stat-label">Load Time</span></div>
+                        <a href="weskini.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pacific Events -->
+                <div class="p-card" data-stack="services">
                     <div class="p-card-accent" style="background: linear-gradient(135deg, #21759b, #4a90d9);"></div>
                     <div class="p-card-body">
                         <div class="p-card-top">
                             <div class="p-stack-icon"><i class="fa-brands fa-wordpress"></i></div>
-                            <span class="p-card-cat">E-Commerce</span>
+                            <span class="p-card-cat">Event Planning</span>
                         </div>
-                        <h3 class="p-card-title">ShopFlow</h3>
-                        <p class="p-card-desc">High-converting WooCommerce store with custom checkout flow, built for a
-                            fashion retail brand.</p>
+                        <h3 class="p-card-title">Pacific Events</h3>
+                        <p class="p-card-desc">Immersive, image-forward web interface that immediately engages visitors and streamlines bookings.</p>
                         <div class="p-card-tags">
-                            <span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>CSS3</span>
+                            <span>WordPress</span><span>UI/UX</span><span>Booking System</span>
                         </div>
                     </div>
                     <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">+45%</span><span class="p-stat-label">Conversion
-                                Rate</span></div>
-                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                        <div class="p-stat"><span class="p-stat-num">+40%</span><span class="p-stat-label">Bookings</span></div>
+                        <a href="pacific-events.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
                     </div>
                 </div>
 
-                <!-- Card 2: NexusDash — React -->
-                <div class="p-card" data-stack="react">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
-                    </div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
-                            <span class="p-card-cat">SaaS Dashboard</span>
-                        </div>
-                        <h3 class="p-card-title">NexusDash</h3>
-                        <p class="p-card-desc">Real-time BI dashboard processing 2M+ data points daily for enterprise
-                            clients with live charts.</p>
-                        <div class="p-card-tags">
-                            <span>React</span><span>Node.js</span><span>MongoDB</span><span>WebSockets</span>
-                        </div>
-                    </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">2M+</span><span class="p-stat-label">Daily Data
-                                Points</span></div>
-                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
-                    </div>
-                </div>
-
-                <!-- Card 3: RankForge — SEO -->
-                <div class="p-card" data-stack="seo">
+                <!-- Card 3: NearMe Job -->
+                <div class="p-card" data-stack="tech">
                     <div class="p-card-accent" style="background: linear-gradient(135deg, #134e5e, #71b280);"></div>
                     <div class="p-card-body">
                         <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #71b280;"><i
-                                    class="fa-solid fa-magnifying-glass-chart"></i></div>
-                            <span class="p-card-cat">SEO &amp; Growth</span>
+                            <div class="p-stack-icon" style="color: #71b280;"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <span class="p-card-cat">Tech Platforms</span>
                         </div>
-                        <h3 class="p-card-title">RankForge</h3>
-                        <p class="p-card-desc">End-to-end Technical SEO overhaul for a B2B SaaS brand — schema, CWV, and
-                            link architecture.</p>
+                        <h3 class="p-card-title">NearMe Job</h3>
+                        <p class="p-card-desc">Highly scalable, SEO-optimized content architecture for discovering government job opportunities.</p>
                         <div class="p-card-tags">
-                            <span>Tech SEO</span><span>Core Web Vitals</span><span>Schema</span><span>Analytics</span>
+                            <span>Tech SEO</span><span>Node.js</span><span>Analytics</span>
                         </div>
                     </div>
                     <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">+320%</span><span class="p-stat-label">Organic
-                                Traffic</span></div>
-                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                        <div class="p-stat"><span class="p-stat-num">10k+</span><span class="p-stat-label">Daily Users</span></div>
+                        <a href="nearme-job.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
                     </div>
                 </div>
 
-                <!-- Card 4: LeadPulse — Full-Stack + React -->
-                <div class="p-card" data-stack="fullstack react">
+                <!-- Card 4: Ravi Fincorp -->
+                <div class="p-card" data-stack="corporate">
                     <div class="p-card-accent" style="background: linear-gradient(135deg, #1c0a00, #7c2d12);"></div>
                     <div class="p-card-body">
                         <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #EA580C;"><i class="fa-solid fa-layer-group"></i>
-                            </div>
-                            <span class="p-card-cat">Full-Stack CRM</span>
+                            <div class="p-stack-icon" style="color: #EA580C;"><i class="fa-solid fa-layer-group"></i></div>
+                            <span class="p-card-cat">Finance Portal</span>
                         </div>
-                        <h3 class="p-card-title">LeadPulse</h3>
-                        <p class="p-card-desc">Custom CRM with automated lead scoring and email workflows. Scaled to
-                            10k+ active users.</p>
+                        <h3 class="p-card-title">Ravi Fincorp</h3>
+                        <p class="p-card-desc">Clean, trustworthy financial portal with interactive loan calculators and multi-step applications.</p>
                         <div class="p-card-tags">
-                            <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span>
+                            <span>React</span><span>Node.js</span><span>FinTech</span>
                         </div>
                     </div>
                     <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">−60%</span><span class="p-stat-label">Sales
-                                Cycle</span></div>
-                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                        <div class="p-stat"><span class="p-stat-num">2x</span><span class="p-stat-label">Lead Gen</span></div>
+                        <a href="ravi-fincorp.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
                     </div>
                 </div>
 
-                <!-- Card 5: StoreMax — WordPress -->
-                <div class="p-card" data-stack="wordpress">
+                <!-- Card 5: Leo Stainless LLP -->
+                <div class="p-card" data-stack="industrial">
                     <div class="p-card-accent" style="background: linear-gradient(135deg, #2d1b69, #6d28d9);"></div>
                     <div class="p-card-body">
                         <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #a78bfa;"><i class="fa-brands fa-wordpress"></i>
-                            </div>
-                            <span class="p-card-cat">WordPress Theme</span>
+                            <div class="p-stack-icon" style="color: #a78bfa;"><i class="fa-brands fa-wordpress"></i></div>
+                            <span class="p-card-cat">Industrial & Trading</span>
                         </div>
-                        <h3 class="p-card-title">StoreMax</h3>
-                        <p class="p-card-desc">Custom Elementor-free WordPress theme for a D2C brand — blazing fast, 95+
-                            PageSpeed score.</p>
+                        <h3 class="p-card-title">Leo Stainless</h3>
+                        <p class="p-card-desc">Modern product catalog and custom quote-generation system optimized for technical SEO.</p>
                         <div class="p-card-tags">
-                            <span>WordPress</span><span>ACF</span><span>Custom PHP</span><span>CSS</span>
+                            <span>B2B Sales</span><span>Tech SEO</span><span>Web Design</span>
                         </div>
                     </div>
                     <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">95+</span><span class="p-stat-label">PageSpeed
-                                Score</span></div>
-                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                        <div class="p-stat"><span class="p-stat-num">+60%</span><span class="p-stat-label">Global Leads</span></div>
+                        <a href="leo-stainless.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
                     </div>
                 </div>
 
-                <!-- Card 6: VisualAPI — Full-Stack -->
-                <div class="p-card" data-stack="fullstack">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e);"></div>
+                <!-- Card 6: Bright Digital Agency -->
+                <div class="p-card" data-stack="digital">
+                    <div class="p-card-accent" style="background: linear-gradient(135deg, #374151, #111827);"></div>
                     <div class="p-card-body">
                         <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #818cf8;"><i class="fa-solid fa-code-branch"></i>
-                            </div>
-                            <span class="p-card-cat">API Platform</span>
+                            <div class="p-stack-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
+                            <span class="p-card-cat">Agency Portfolio</span>
                         </div>
-                        <h3 class="p-card-title">VisualAPI</h3>
-                        <p class="p-card-desc">Scalable REST API platform with JWT auth, rate limiting, and a React
-                            developer portal for clients.</p>
+                        <h3 class="p-card-title">Bright Digital</h3>
+                        <p class="p-card-desc">Highly interactive, animated web experience utilizing GSAP for smooth scrolling and micro-interactions.</p>
                         <div class="p-card-tags">
-                            <span>Node.js</span><span>Express</span><span>React</span><span>Redis</span>
+                            <span>React</span><span>GSAP</span><span>Conversion UI</span>
                         </div>
                     </div>
                     <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">50k+</span><span class="p-stat-label">API
-                                Calls/Day</span></div>
-                        <a href="#contact" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                        <div class="p-stat"><span class="p-stat-num">99</span><span class="p-stat-label">Lighthouse</span></div>
+                        <a href="bright-digital-agency.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
                     </div>
                 </div>
 

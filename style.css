@@ -33,36 +33,6 @@ html {
 body {
     padding: 40px 5%;
     line-height: 1.6;
-    cursor: none;
-}
-
-/* Custom Cursor */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background: var(--accent-blue);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background 0.3s, opacity 0.3s;
-    mix-blend-mode: multiply;
-}
-
-.custom-cursor.hovering {
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border: 1px solid var(--accent-blue);
-    mix-blend-mode: normal;
-}
-
-@media (max-width: 900px) {
-    body { cursor: auto; }
-    .custom-cursor { display: none; }
 }
 
 h1, h2, h3, h4, h5, h6 {

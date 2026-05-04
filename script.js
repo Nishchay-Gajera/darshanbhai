@@ -16,33 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTime();
     setInterval(updateTime, 1000);
 
-    // Custom Cursor Logic
-    const cursor = document.querySelector('.custom-cursor');
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    if (!isTouchDevice && cursor) {
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-        });
-
-        // Hover effects for cursor
-        const interactives = document.querySelectorAll('a, button, .interactive-hover, .magnetic, .stack-item, .bento-box');
-        interactives.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hovering');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hovering');
-            });
-        });
-
-    }
-
     // GSAP Scroll Animations
     gsap.registerPlugin(ScrollTrigger);
 
