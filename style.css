@@ -365,7 +365,7 @@ a {
 /* --- THE REST OF ORIGINAL BENTO THEME --- */
 .bento-container {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto; margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -738,4 +738,8 @@ footer {
     .nav-links { display: none; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .stack-filter { gap: 8px; padding: 14px; }
+}
+/* Global Cursor Fixes */
+.btn-primary, .btn-ghost, .magnetic, .p-card-link, button, .stack-item, .feature-card {
+    cursor: pointer;
 }

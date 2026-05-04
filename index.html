@@ -91,7 +91,7 @@
     </main>
 
     <!-- THE REST OF BENTO THEME (Services, Portfolio, Contact) -->
-    <main class="bento-container" style="margin-top: 20px;">
+    <main class="bento-container">
         <!-- Section: Services -->
         <section id="services" class="services-section fade-in">
             <div class="section-title"
@@ -433,7 +433,7 @@
                 // Configure rotation and initial position
                 globe.controls().autoRotate = true;
                 globe.controls().autoRotateSpeed = 0.2; // VERY slow so it stays on Ahmedabad when loaded
-                globe.controls().enableZoom = true; // Enabled user zoom functionality
+                globe.controls().enableZoom = false; // Disabled user zoom functionality to fix scrolling issues
 
                 // Point camera to India initially, perfect view of the world centered on Ahmedabad
                 globe.pointOfView({ lat: 23.0225, lng: 72.5714, altitude: 2.2 }, 1000);
