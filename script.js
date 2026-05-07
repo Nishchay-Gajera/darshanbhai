@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Portfolio Stack Filter ----
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const pCards = document.querySelectorAll('.p-card');
+    const pCards = document.querySelectorAll('.grid-card, .p-card');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.dataset.filter;
 
             pCards.forEach(card => {
-                const stacks = card.dataset.stack || '';
-                if (filter === 'all' || stacks.split(' ').includes(filter)) {
+                const category = card.getAttribute('data-category') || card.dataset.stack || '';
+                if (filter === 'all' || category === filter || category.split(' ').includes(filter)) {
                     card.classList.remove('hidden');
                 } else {
                     card.classList.add('hidden');
