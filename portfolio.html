@@ -1,35 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Darshan Patel</title>
-    <meta name="description" content="Darshan Patel's portfolio — 21+ client projects across e-commerce, corporate, industrial, and tech.">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Darshan Patel's portfolio — 21+ client projects across e-commerce, corporate, industrial, and tech.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .category-filter{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:60px;}
-        .cat-btn{padding:10px 22px;border-radius:100px;border:1px solid var(--bento-border);background:var(--bento-bg);color:var(--text-primary);font-weight:600;font-size:.85rem;font-family:inherit;cursor:pointer;transition:all .3s ease;box-shadow:var(--shadow-subtle);display:flex;align-items:center;gap:8px;}
-        .cat-btn:hover{border-color:var(--accent-orange);color:var(--accent-orange);transform:translateY(-2px);}
-        .cat-btn.active{background:var(--text-primary);color:white;border-color:var(--text-primary);}
-        .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:30px;padding-bottom:100px;}
-        .grid-card{background:var(--bento-bg);border:1px solid var(--bento-border);border-radius:20px;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(0,0,0,.02);}
-        .grid-card:hover{transform:translateY(-8px);border-color:var(--accent-orange);box-shadow:0 20px 40px rgba(234,88,12,.08);}
-        .grid-card.hidden{display:none!important;}
-        .gc-img-wrapper{height:240px;width:100%;overflow:hidden;border-bottom:1px solid var(--bento-border);position:relative;}
-        .gc-img-wrapper img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .7s cubic-bezier(.16,1,.3,1);}
-        .grid-card:hover .gc-img-wrapper img{transform:scale(1.06);}
-        .gc-info{padding:35px 30px;display:flex;flex-direction:column;flex-grow:1;position:relative;}
-        .gc-cat{font-size:.75rem;font-weight:700;color:var(--accent-orange);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-        .gc-cat::before{content:'';width:20px;height:1px;background:var(--accent-orange);}
-        .gc-title{font-size:1.6rem;font-weight:800;color:var(--text-primary);margin-bottom:15px;line-height:1.2;letter-spacing:-.5px;}
-        .gc-desc{color:var(--text-secondary);font-size:.95rem;line-height:1.6;margin-bottom:25px;flex-grow:1;}
-        .gc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px;}
-        .gc-tags span{padding:6px 14px;background:var(--bg-color);border-radius:100px;font-size:.75rem;font-weight:600;color:var(--text-primary);border:1px solid var(--bento-border);}
-        @media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;}}
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+        .cat-btn {
+            padding: 10px 22px;
+            border-radius: 100px;
+            border: 1px solid var(--bento-border);
+            background: var(--bento-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: .85rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all .3s ease;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cat-btn:hover {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        .cat-btn.active {
+            background: var(--text-primary);
+            color: white;
+            border-color: var(--text-primary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 30px;
+            padding-bottom: 100px;
+        }
+
+        .grid-card {
+            background: var(--bento-bg);
+            border: 1px solid var(--bento-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all .4s cubic-bezier(.16, 1, .3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .02);
+        }
+
+        .grid-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-orange);
+            box-shadow: 0 20px 40px rgba(234, 88, 12, .08);
+        }
+
+        .grid-card.hidden {
+            display: none !important;
+        }
+
+        .gc-img-wrapper {
+            height: 240px;
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid var(--bento-border);
+            position: relative;
+        }
+
+        .gc-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform .7s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .grid-card:hover .gc-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .gc-info {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .gc-cat {
+            font-size: .75rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gc-cat::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--accent-orange);
+        }
+
+        .gc-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+        }
+
+        .gc-desc {
+            color: var(--text-secondary);
+            font-size: .95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .gc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .gc-tags span {
+            padding: 6px 14px;
+            background: var(--bg-color);
+            border-radius: 100px;
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            border: 1px solid var(--bento-border);
+        }
+
+        @media(max-width:768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
     <nav class="floating-nav">
         <div class="nav-brand">Darshan.</div>
@@ -37,7 +173,8 @@
             <a href="index.html" class="magnetic" data-strength="15">Home</a>
             <a href="about.html" class="magnetic" data-strength="15">About Me</a>
             <a href="services.html" class="magnetic" data-strength="15">Services</a>
-            <a href="#" class="magnetic" data-strength="15" style="color:var(--text-primary);font-weight:700;">Portfolio</a>
+            <a href="#" class="magnetic" data-strength="15"
+                style="color:var(--text-primary);font-weight:700;">Portfolio</a>
             <a href="index.html#contact" class="magnetic" data-strength="15">Contact Us</a>
         </div>
         <div class="time-module" id="local-time">Loading...</div>
@@ -47,330 +184,438 @@
         <div class="section-title text-center" style="text-align:center;margin-bottom:40px;">
             <p class="section-eyebrow">Project Showcase</p>
             <h1 style="font-size:4.5rem;letter-spacing:-2px;">Selected Work.</h1>
-            <p class="muted-text" style="font-size:1.1rem;margin-top:15px;">21+ client projects delivered. Filter by industry below.</p>
+            <p class="muted-text" style="font-size:1.1rem;margin-top:15px;">21+ client projects delivered. Filter by
+                industry below.</p>
         </div>
 
         <div class="category-filter fade-in">
             <button class="cat-btn active" data-filter="all">All Projects</button>
-            <button class="cat-btn" data-filter="industrial"><i class="fa-solid fa-industry"></i> Industrial &amp; Trading</button>
-            <button class="cat-btn" data-filter="ecommerce"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</button>
+            <button class="cat-btn" data-filter="industrial"><i class="fa-solid fa-industry"></i> Industrial &amp;
+                Trading</button>
+            <button class="cat-btn" data-filter="ecommerce"><i class="fa-solid fa-cart-shopping"></i>
+                E-Commerce</button>
             <button class="cat-btn" data-filter="corporate"><i class="fa-solid fa-building"></i> Corporate</button>
             <button class="cat-btn" data-filter="services"><i class="fa-solid fa-concierge-bell"></i> Services</button>
-            <button class="cat-btn" data-filter="digital"><i class="fa-solid fa-laptop-code"></i> Digital Agency</button>
+            <button class="cat-btn" data-filter="digital"><i class="fa-solid fa-laptop-code"></i> Digital
+                Agency</button>
             <button class="cat-btn" data-filter="tech"><i class="fa-solid fa-microchip"></i> Tech Platforms</button>
         </div>
 
         <div class="portfolio-grid fade-in" id="portfolioGrid">
             <div class="grid-card" data-category="industrial">
                 <div class="gc-img-wrapper">
-                    <img src="assets/leo-stainless_ss.png" alt="Leo Stainless LLP" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/leo-stainless_ss.png" alt="Leo Stainless LLP"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Industrial &amp; Trading</div>
                     <h2 class="gc-title">Leo Stainless LLP</h2>
-                    <p class="gc-desc">A leading stockist and supplier of high-quality stainless steel products, committed to excellence and industry standards.</p>
+                    <p class="gc-desc">A leading stockist and supplier of high-quality stainless steel products,
+                        committed to excellence and industry standards.</p>
                     <div class="gc-tags"><span>Web Design</span><span>B2B Sales</span></div>
-                    <a href="pages/leo-stainless.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/leo-stainless.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="industrial">
                 <div class="gc-img-wrapper">
-                    <img src="assets/rj-inox_ss.png" alt="RJ Inox LLP" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/rj-inox_ss.png" alt="RJ Inox LLP"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Industrial &amp; Trading</div>
                     <h2 class="gc-title">RJ Inox LLP</h2>
-                    <p class="gc-desc">A leading stockist and supplier of premium stainless steel products, dedicated to excellence and industry compliance.</p>
+                    <p class="gc-desc">A leading stockist and supplier of premium stainless steel products, dedicated to
+                        excellence and industry compliance.</p>
                     <div class="gc-tags"><span>Corporate Web</span><span>Compliance</span></div>
-                    <a href="pages/rj-inox.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/rj-inox.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="industrial">
                 <div class="gc-img-wrapper">
-                    <img src="assets/gayatri-refrigeration_ss.png" alt="Gayatri Refrigeration" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/gayatri-refrigeration_ss.png" alt="Gayatri Refrigeration"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Industrial &amp; Trading</div>
                     <h2 class="gc-title">Gayatri Refrigeration</h2>
-                    <p class="gc-desc">Commercial cold storage &amp; industrial refrigeration solutions provider with enterprise-grade B2B digital presence.</p>
+                    <p class="gc-desc">Commercial cold storage &amp; industrial refrigeration solutions provider with
+                        enterprise-grade B2B digital presence.</p>
                     <div class="gc-tags"><span>B2B Portal</span><span>Cold Storage</span></div>
-                    <a href="pages/gayatri-refrigeration.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/gayatri-refrigeration.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="industrial">
                 <div class="gc-img-wrapper">
-                    <img src="assets/gayatri-engineering_ss.png" alt="Gayatri Engineering" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/gayatri-engineering_ss.png" alt="Gayatri Engineering"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Industrial &amp; Trading</div>
                     <h2 class="gc-title">Gayatri Engineering</h2>
-                    <p class="gc-desc">Precision engineering and manufacturing company web portal, built for enterprise B2B clients with technical product catalogues.</p>
+                    <p class="gc-desc">Precision engineering and manufacturing company web portal, built for enterprise
+                        B2B clients with technical product catalogues.</p>
                     <div class="gc-tags"><span>Manufacturing UI</span><span>B2B Portal</span></div>
-                    <a href="pages/gayatri-engineering.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/gayatri-engineering.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="industrial">
                 <div class="gc-img-wrapper">
-                    <img src="assets/tasha-industries_ss.png" alt="Tasha Industries" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/tasha-industries_ss.png" alt="Tasha Industries"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Industrial &amp; Trading</div>
                     <h2 class="gc-title">Tasha Industries</h2>
-                    <p class="gc-desc">A robust online presence for Tasha Industries, showcasing manufacturing prowess and streamlined sales communication.</p>
+                    <p class="gc-desc">A robust online presence for Tasha Industries, showcasing manufacturing prowess
+                        and streamlined sales communication.</p>
                     <div class="gc-tags"><span>Manufacturing UI</span><span>B2B Portal</span></div>
-                    <a href="pages/tasha-industries.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/tasha-industries.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="ecommerce">
                 <div class="gc-img-wrapper">
-                    <img src="assets/quickcarto_ss.png" alt="QuickCarto" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/quickcarto_ss.png" alt="QuickCarto"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">E-Commerce</div>
                     <h2 class="gc-title">QuickCarto</h2>
-                    <p class="gc-desc">A robust e-commerce platform offering a seamless shopping experience for modern consumers.</p>
+                    <p class="gc-desc">A robust e-commerce platform offering a seamless shopping experience for modern
+                        consumers.</p>
                     <div class="gc-tags"><span>E-Commerce</span><span>UI/UX</span></div>
-                    <a href="pages/quickcarto.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/quickcarto.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="ecommerce">
                 <div class="gc-img-wrapper">
-                    <img src="assets/esprezzo_ss.png" alt="Esprezzo" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/esprezzo_ss.png" alt="Esprezzo"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">E-Commerce</div>
                     <h2 class="gc-title">Esprezzo</h2>
-                    <p class="gc-desc">A premium online destination for coffee lovers, offering top-tier beans and brewing equipment.</p>
+                    <p class="gc-desc">A premium online destination for coffee lovers, offering top-tier beans and
+                        brewing equipment.</p>
                     <div class="gc-tags"><span>E-Commerce</span><span>Shopify</span></div>
-                    <a href="pages/esprezzo.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/esprezzo.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="ecommerce">
                 <div class="gc-img-wrapper">
-                    <img src="assets/weskini_ss.png" alt="Weskini" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/weskini_ss.png" alt="Weskini"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">E-Commerce</div>
                     <h2 class="gc-title">Weskini</h2>
-                    <p class="gc-desc">A premium, high-converting e-commerce platform designed for optimal user experience and seamless shopping.</p>
+                    <p class="gc-desc">A premium, high-converting e-commerce platform designed for optimal user
+                        experience and seamless shopping.</p>
                     <div class="gc-tags"><span>E-Commerce</span><span>Shopify Plus</span></div>
-                    <a href="pages/weskini.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/weskini.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="ecommerce">
                 <div class="gc-img-wrapper">
-                    <img src="assets/gk-jewel_ss.png" alt="GK Jewel" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/gk-jewel_ss.png" alt="GK Jewel"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">E-Commerce</div>
                     <h2 class="gc-title">GK Jewel</h2>
-                    <p class="gc-desc">Luxurious jewelry online store. Built to highlight intricate product details with a smooth, elegant checkout experience.</p>
+                    <p class="gc-desc">Luxurious jewelry online store. Built to highlight intricate product details with
+                        a smooth, elegant checkout experience.</p>
                     <div class="gc-tags"><span>Jewelry Store</span><span>Secure Checkout</span></div>
-                    <a href="pages/gk-jewel.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/gk-jewel.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="ecommerce">
                 <div class="gc-img-wrapper">
-                    <img src="assets/canvas-special_ss.png" alt="Canvas Special" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/canvas-special_ss.png" alt="Canvas Special"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">E-Commerce</div>
                     <h2 class="gc-title">Canvas Special</h2>
-                    <p class="gc-desc">Premium custom canvas print e-commerce store — transforming personal photos into stunning wall art.</p>
+                    <p class="gc-desc">Premium custom canvas print e-commerce store — transforming personal photos into
+                        stunning wall art.</p>
                     <div class="gc-tags"><span>WooCommerce</span><span>Custom Configurator</span></div>
-                    <a href="pages/canvas-special.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/canvas-special.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="ecommerce">
                 <div class="gc-img-wrapper">
-                    <img src="assets/pro-albums-direct_ss.png" alt="Pro Albums Direct" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/pro-albums-direct_ss.png" alt="Pro Albums Direct"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">E-Commerce</div>
                     <h2 class="gc-title">Pro Albums Direct</h2>
-                    <p class="gc-desc">Premium photo book and layflat album e-commerce for South Africa, with a multi-step product builder for photographers.</p>
+                    <p class="gc-desc">Premium photo book and layflat album e-commerce for South Africa, with a
+                        multi-step product builder for photographers.</p>
                     <div class="gc-tags"><span>WooCommerce</span><span>Product Builder</span></div>
-                    <a href="pages/pro-albums-direct.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/pro-albums-direct.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="services">
                 <div class="gc-img-wrapper">
-                    <img src="assets/trips-njoy_ss.png" alt="Trips N Joy" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/trips-njoy_ss.png" alt="Trips N Joy"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Services &amp; Tourism</div>
                     <h2 class="gc-title">Trips N Joy</h2>
-                    <p class="gc-desc">A vibrant travel experience platform with curated domestic &amp; international trips, WhatsApp-powered bookings, and mobile-first design.</p>
+                    <p class="gc-desc">A vibrant travel experience platform with curated domestic &amp; international
+                        trips, WhatsApp-powered bookings, and mobile-first design.</p>
                     <div class="gc-tags"><span>Travel Portal</span><span>WhatsApp CRM</span></div>
-                    <a href="pages/trips-njoy.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/trips-njoy.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="services">
                 <div class="gc-img-wrapper">
-                    <img src="assets/pacific-events_ss.png" alt="Pacific Events" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/pacific-events_ss.png" alt="Pacific Events"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Services &amp; Events</div>
                     <h2 class="gc-title">Pacific Events</h2>
-                    <p class="gc-desc">Top-tier event planning services in Ahmedabad. Transforming ideas into memorable, seamlessly executed experiences.</p>
+                    <p class="gc-desc">Top-tier event planning services in Ahmedabad. Transforming ideas into memorable,
+                        seamlessly executed experiences.</p>
                     <div class="gc-tags"><span>Event Planning</span><span>UI/UX</span></div>
-                    <a href="pages/pacific-events.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/pacific-events.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="services">
                 <div class="gc-img-wrapper">
-                    <img src="assets/baboon-safari-resort_ss.png" alt="Baboon Safari Resort" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/baboon-safari-resort_ss.png" alt="Baboon Safari Resort"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Services &amp; Events</div>
                     <h2 class="gc-title">Baboon Safari Resort</h2>
-                    <p class="gc-desc">An immersive safari experience. Online booking portal capturing the authentic beauty of wildlife adventures.</p>
+                    <p class="gc-desc">An immersive safari experience. Online booking portal capturing the authentic
+                        beauty of wildlife adventures.</p>
                     <div class="gc-tags"><span>Resort Booking</span><span>API Integration</span></div>
-                    <a href="pages/baboon-safari-resort.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/baboon-safari-resort.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="corporate">
                 <div class="gc-img-wrapper">
-                    <img src="assets/cloudrootsinfra_ss.png" alt="Cloud Roots Infra" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/cloudrootsinfra_ss.png" alt="Cloud Roots Infra"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Corporate &amp; Real Estate</div>
                     <h2 class="gc-title">Cloud Roots Infra</h2>
-                    <p class="gc-desc">A corporate digital presence for a leading infrastructure and real estate development firm.</p>
+                    <p class="gc-desc">A corporate digital presence for a leading infrastructure and real estate
+                        development firm.</p>
                     <div class="gc-tags"><span>Corporate Web</span><span>Real Estate</span></div>
-                    <a href="pages/cloudrootsinfra.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/cloudrootsinfra.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="corporate">
                 <div class="gc-img-wrapper">
-                    <img src="assets/ravi-fincorp_ss.png" alt="Ravi Fincorp" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/ravi-fincorp_ss.png" alt="Ravi Fincorp"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Corporate &amp; Consultancy</div>
                     <h2 class="gc-title">Ravi Fincorp</h2>
-                    <p class="gc-desc">Leading loan consultancy firm dedicated to providing expert guidance and tailored financial solutions.</p>
+                    <p class="gc-desc">Leading loan consultancy firm dedicated to providing expert guidance and tailored
+                        financial solutions.</p>
                     <div class="gc-tags"><span>Finance</span><span>Lead Generation</span></div>
-                    <a href="pages/ravi-fincorp.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/ravi-fincorp.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="corporate">
                 <div class="gc-img-wrapper">
-                    <img src="assets/first-decacorn_ss.png" alt="First Decacorn" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/first-decacorn_ss.png" alt="First Decacorn"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Corporate &amp; HR</div>
                     <h2 class="gc-title">First Decacorn</h2>
-                    <p class="gc-desc">Premier HR recruitment platform connecting India's top talent with ambitious businesses via a dual-audience funnel.</p>
+                    <p class="gc-desc">Premier HR recruitment platform connecting India's top talent with ambitious
+                        businesses via a dual-audience funnel.</p>
                     <div class="gc-tags"><span>HR Platform</span><span>Lead Gen</span></div>
-                    <a href="pages/first-decacorn.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/first-decacorn.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="corporate">
                 <div class="gc-img-wrapper">
-                    <img src="assets/rrmgt_ss.png" alt="RR Manpower Services" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/rrmgt_ss.png" alt="RR Manpower Services"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Corporate &amp; HR</div>
                     <h2 class="gc-title">RR Manpower Services</h2>
-                    <p class="gc-desc">Professional HR staffing and recruitment agency in Gujarat with a dual-path conversion funnel.</p>
+                    <p class="gc-desc">Professional HR staffing and recruitment agency in Gujarat with a dual-path
+                        conversion funnel.</p>
                     <div class="gc-tags"><span>Job Board</span><span>Recruitment</span></div>
-                    <a href="pages/rrmgt.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/rrmgt.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="corporate">
                 <div class="gc-img-wrapper">
-                    <img src="assets/whereelse-properties_ss.png" alt="WhereElse Properties" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/whereelse-properties_ss.png" alt="WhereElse Properties"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Corporate &amp; Real Estate</div>
                     <h2 class="gc-title">WhereElse Properties</h2>
-                    <p class="gc-desc">Modern real estate township portal with interactive property listings, floor plans, and investor lead capture.</p>
+                    <p class="gc-desc">Modern real estate township portal with interactive property listings, floor
+                        plans, and investor lead capture.</p>
                     <div class="gc-tags"><span>Real Estate</span><span>Property Listings</span></div>
-                    <a href="pages/whereelse-properties.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/whereelse-properties.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="digital">
                 <div class="gc-img-wrapper">
-                    <img src="assets/veplskill_ss.png" alt="VEPL Skill" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/veplskill_ss.png" alt="VEPL Skill"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Digital &amp; Agency</div>
                     <h2 class="gc-title">VEPL Skill</h2>
-                    <p class="gc-desc">An educational platform designed to empower individuals with essential skills for the modern workforce.</p>
+                    <p class="gc-desc">An educational platform designed to empower individuals with essential skills for
+                        the modern workforce.</p>
                     <div class="gc-tags"><span>EdTech</span><span>LMS</span></div>
-                    <a href="pages/veplskill.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/veplskill.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="digital">
                 <div class="gc-img-wrapper">
-                    <img src="assets/concurmedia_ss.png" alt="Concur Media" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/concurmedia_ss.png" alt="Concur Media"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Digital &amp; Agency</div>
                     <h2 class="gc-title">Concur Media</h2>
-                    <p class="gc-desc">A creative digital agency focused on driving business growth through strategic marketing and tech solutions.</p>
+                    <p class="gc-desc">A creative digital agency focused on driving business growth through strategic
+                        marketing and tech solutions.</p>
                     <div class="gc-tags"><span>Agency Site</span><span>Branding</span></div>
-                    <a href="pages/concurmedia.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/concurmedia.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="digital">
                 <div class="gc-img-wrapper">
-                    <img src="assets/bright-digital-spark_ss.png" alt="Bright Digital Spark" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/bright-digital-spark_ss.png" alt="Bright Digital Spark"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Digital &amp; Agency</div>
                     <h2 class="gc-title">Bright Digital Spark</h2>
-                    <p class="gc-desc">Premier training institute specializing in digital courses designed to empower individuals with cutting-edge skills.</p>
+                    <p class="gc-desc">Premier training institute specializing in digital courses designed to empower
+                        individuals with cutting-edge skills.</p>
                     <div class="gc-tags"><span>EdTech</span><span>LMS Integration</span></div>
-                    <a href="pages/bright-digital-spark.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/bright-digital-spark.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="digital">
                 <div class="gc-img-wrapper">
-                    <img src="assets/bright-digital-agency_ss.png" alt="Bright Digital Agency" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/bright-digital-agency_ss.png" alt="Bright Digital Agency"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Digital &amp; Agency</div>
                     <h2 class="gc-title">Bright Digital Agency</h2>
-                    <p class="gc-desc">Full-service digital agency driving business growth through strategic design, marketing, and robust tech solutions.</p>
+                    <p class="gc-desc">Full-service digital agency driving business growth through strategic design,
+                        marketing, and robust tech solutions.</p>
                     <div class="gc-tags"><span>Agency Site</span><span>GSAP Animations</span></div>
-                    <a href="pages/bright-digital-agency.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/bright-digital-agency.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="tech">
                 <div class="gc-img-wrapper">
-                    <img src="assets/smart-card-banavo_ss.png" alt="Smart Card Banavo" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/smart-card-banavo_ss.png" alt="Smart Card Banavo"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Tech Platforms</div>
                     <h2 class="gc-title">Smart Card Banavo</h2>
-                    <p class="gc-desc">A sleek landing page for a smart NFC digital business card service, boosting digital presence and networking.</p>
+                    <p class="gc-desc">A sleek landing page for a smart NFC digital business card service, boosting
+                        digital presence and networking.</p>
                     <div class="gc-tags"><span>Landing Page</span><span>NFC Tech</span></div>
-                    <a href="pages/smart-card-banavo.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/smart-card-banavo.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="tech">
                 <div class="gc-img-wrapper">
-                    <img src="assets/nearme-job_ss.png" alt="NearMe Job" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/nearme-job_ss.png" alt="NearMe Job"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Tech Platforms</div>
                     <h2 class="gc-title">NearMe Job</h2>
-                    <p class="gc-desc">Trusted platform for discovering the latest government job opportunities, with expert career guidance and SEO-rich listings.</p>
+                    <p class="gc-desc">Trusted platform for discovering the latest government job opportunities, with
+                        expert career guidance and SEO-rich listings.</p>
                     <div class="gc-tags"><span>Job Portal</span><span>SEO Optimised</span></div>
-                    <a href="pages/nearme-job.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/nearme-job.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="grid-card" data-category="tech">
                 <div class="gc-img-wrapper">
-                    <img src="assets/mindbrust_ss.png" alt="Mindbrust" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
+                    <img src="assets/mindbrust_ss.png" alt="Mindbrust"
+                        onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                 </div>
                 <div class="gc-info">
                     <div class="gc-cat">Tech Platforms</div>
                     <h2 class="gc-title">Mindbrust</h2>
-                    <p class="gc-desc">A suite of free, zero-dependency online utility tools — blazing fast, ad-free, and PWA-ready for daily digital tasks.</p>
+                    <p class="gc-desc">A suite of free, zero-dependency online utility tools — blazing fast, ad-free,
+                        and PWA-ready for daily digital tasks.</p>
                     <div class="gc-tags"><span>Web Tools</span><span>PWA</span></div>
-                    <a href="pages/mindbrust.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="portfolio/mindbrust.html" class="btn-primary magnetic" data-strength="15"
+                        style="align-self:flex-start;margin-top:auto;">View Case Study <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -384,7 +629,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterBtns = document.querySelectorAll('.cat-btn');
-            const gridCards  = document.querySelectorAll('.grid-card');
+            const gridCards = document.querySelectorAll('.grid-card');
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterBtns.forEach(b => b.classList.remove('active'));
@@ -398,4 +643,5 @@
         });
     </script>
 </body>
+
 </html>
