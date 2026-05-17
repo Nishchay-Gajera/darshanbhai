@@ -27,33 +27,6 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
-        /* First card spans 2 columns for a hero look */
-        .blog-card.featured {
-            grid-column: span 2;
-            flex-direction: row;
-        }
-
-        .blog-card.featured .blog-img-wrapper {
-            width: 50%;
-            height: auto;
-            min-height: 380px;
-        }
-
-        .blog-card.featured .blog-content {
-            width: 50%;
-            padding: 50px 40px;
-            justify-content: center;
-        }
-
-        .blog-card.featured .blog-title {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .blog-card.featured .blog-excerpt {
-            font-size: 1.1rem;
-        }
 
         .blog-card:hover {
             transform: translateY(-10px);
@@ -191,14 +164,6 @@
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-            .blog-card.featured {
-                grid-column: span 1;
-                flex-direction: column;
-            }
-            .blog-card.featured .blog-img-wrapper,
-            .blog-card.featured .blog-content {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -227,8 +192,8 @@
         </div>
 
         <div class="blog-grid fade-in">
-            <!-- Blog Card 1 (Featured) -->
-            <article class="blog-card featured">
+            <!-- Blog Card 1 -->
+            <article class="blog-card">
                 <div class="blog-img-wrapper mesh-1"></div>
                 <div class="blog-content">
                     <div class="blog-meta">
