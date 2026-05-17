@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Darshan Patel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -98,7 +101,7 @@
         }
 
         .ide-header {
-            background: rgba(0,0,0,0.03);
+            background: rgba(0, 0, 0, 0.03);
             border-bottom: 1px solid var(--bento-border);
             padding: 12px 20px;
             display: flex;
@@ -107,12 +110,22 @@
         }
 
         .mac-dot {
-            width: 12px; height: 12px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
         }
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27c93f; }
+
+        .dot-red {
+            background: #ff5f56;
+        }
+
+        .dot-yellow {
+            background: #ffbd2e;
+        }
+
+        .dot-green {
+            background: #27c93f;
+        }
 
         .ide-title {
             margin-left: 10px;
@@ -130,10 +143,23 @@
             overflow-x: auto;
         }
 
-        .code-kw { color: var(--accent-orange); font-weight: 700; }
-        .code-str { color: #10b981; }
-        .code-func { color: #8b5cf6; }
-        .code-comment { color: var(--text-secondary); font-style: italic; }
+        .code-kw {
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+
+        .code-str {
+            color: #10b981;
+        }
+
+        .code-func {
+            color: #8b5cf6;
+        }
+
+        .code-comment {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
 
         /* Contribution Graph Box (GitHub Inspired) */
         .commit-bento {
@@ -171,17 +197,30 @@
             width: 14px;
             height: 14px;
             border-radius: 3px;
-            background: rgba(0,0,0,0.05); /* Light theme default */
-        }
-        
-        [data-theme="dark"] .graph-sq {
-            background: rgba(255,255,255,0.05); /* Dark theme default */
+            background: rgba(0, 0, 0, 0.05);
+            /* Light theme default */
         }
 
-        .sq-1 { background: rgba(234, 88, 12, 0.2); }
-        .sq-2 { background: rgba(234, 88, 12, 0.5); }
-        .sq-3 { background: rgba(234, 88, 12, 0.8); }
-        .sq-4 { background: var(--accent-orange); }
+        [data-theme="dark"] .graph-sq {
+            background: rgba(255, 255, 255, 0.05);
+            /* Dark theme default */
+        }
+
+        .sq-1 {
+            background: rgba(234, 88, 12, 0.2);
+        }
+
+        .sq-2 {
+            background: rgba(234, 88, 12, 0.5);
+        }
+
+        .sq-3 {
+            background: rgba(234, 88, 12, 0.8);
+        }
+
+        .sq-4 {
+            background: var(--accent-orange);
+        }
 
         /* Experience Timeline */
         .timeline {
@@ -230,17 +269,21 @@
         }
 
         @media(max-width: 900px) {
-            .about-grid { grid-template-columns: 1fr; }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav class="floating-nav">
-        <div class="nav-brand">Darshan.</div>
+        <div class="nav-brand">Darshan Patel.</div>
         <div class="nav-links">
             <a href="index.html" class="magnetic" data-strength="15">Home</a>
-            <a href="about.html" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">About Me</a>
+            <a href="about.html" class="magnetic" data-strength="15"
+                style="color: var(--text-primary); font-weight: 700;">About Me</a>
             <a href="services.html" class="magnetic" data-strength="15">Services</a>
             <a href="portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
             <a href="blog.html" class="magnetic" data-strength="15">Blog</a>
@@ -263,14 +306,19 @@
                     <div class="profile-img">DP</div>
                     <h1>Darshan Patel</h1>
                     <p>Senior Full-Stack Engineer</p>
-                    <div style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                    <div
+                        style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
                         Bridging the gap between pixel-perfect UI design and robust backend engineering.
                     </div>
-                    
-                    <ul style="list-style: none; padding: 0; text-align: left; border-top: 1px solid var(--bento-border); padding-top: 20px; margin-top: 20px;">
-                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot" style="width: 20px; color: var(--accent-orange);"></i> Ahmedabad, India</li>
-                        <li style="margin-bottom: 10px;"><i class="fa-regular fa-envelope" style="width: 20px; color: var(--accent-orange);"></i> contact@darshan.com</li>
-                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-briefcase" style="width: 20px; color: var(--accent-orange);"></i> Available for Hire</li>
+
+                    <ul
+                        style="list-style: none; padding: 0; text-align: left; border-top: 1px solid var(--bento-border); padding-top: 20px; margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-location-dot"
+                                style="width: 20px; color: var(--accent-orange);"></i> Ahmedabad, India</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-regular fa-envelope"
+                                style="width: 20px; color: var(--accent-orange);"></i> contact@Darshan Patel.com</li>
+                        <li style="margin-bottom: 10px;"><i class="fa-solid fa-briefcase"
+                                style="width: 20px; color: var(--accent-orange);"></i> Available for Hire</li>
                     </ul>
 
                     <div class="social-links">
@@ -284,70 +332,81 @@
                 <div class="bento-box">
                     <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Core Technologies</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">React</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">Node.js</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">TypeScript</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">Python</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">WordPress</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">MongoDB</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">GSAP</span>
-                        <span style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">AWS</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">React</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">Node.js</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">TypeScript</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">Python</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">WordPress</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">MongoDB</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">GSAP</span>
+                        <span
+                            style="padding: 6px 14px; background: var(--bg-color); border: 1px solid var(--bento-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600;">AWS</span>
                     </div>
                 </div>
             </div>
 
             <!-- RIGHT COLUMN -->
             <div class="about-content">
-                
+
                 <!-- IDE Mockup Bento (Github Inspired) -->
                 <div class="bento-box ide-bento">
                     <div class="ide-header">
                         <div class="mac-dot dot-red"></div>
                         <div class="mac-dot dot-yellow"></div>
                         <div class="mac-dot dot-green"></div>
-                        <div class="ide-title">darshan.js</div>
+                        <div class="ide-title">Darshan Patel.js</div>
                     </div>
                     <div class="ide-body">
-<span class="code-comment">// Software Engineer & Digital Architect</span>
-<br><br>
-<span class="code-kw">const</span> developer <span class="code-kw">=</span> {
-<br>
-&nbsp;&nbsp;name: <span class="code-str">"Darshan Patel"</span>,
-<br>
-&nbsp;&nbsp;role: <span class="code-str">"Full-Stack Engineer"</span>,
-<br>
-&nbsp;&nbsp;passion: [<span class="code-str">"Clean Code"</span>, <span class="code-str">"System Architecture"</span>, <span class="code-str">"UI Interactions"</span>],
-<br><br>
-&nbsp;&nbsp;<span class="code-func">buildProduct</span>() {
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">while</span> (coffee_cup.isFull) {
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">try</span> {
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.writeCode();
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.deployInfrastructure();
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">return</span> <span class="code-str">"Scalable Web Experience Delivered 🚀"</span>;
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-kw">catch</span> (bugs) {
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.debug(bugs);
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;}
-<br>
-&nbsp;&nbsp;}
-<br>
-};
+                        <span class="code-comment">// Software Engineer & Digital Architect</span>
+                        <br><br>
+                        <span class="code-kw">const</span> developer <span class="code-kw">=</span> {
+                        <br>
+                        &nbsp;&nbsp;name: <span class="code-str">"Darshan Patel"</span>,
+                        <br>
+                        &nbsp;&nbsp;role: <span class="code-str">"Full-Stack Engineer"</span>,
+                        <br>
+                        &nbsp;&nbsp;passion: [<span class="code-str">"Clean Code"</span>, <span class="code-str">"System
+                            Architecture"</span>, <span class="code-str">"UI Interactions"</span>],
+                        <br><br>
+                        &nbsp;&nbsp;<span class="code-func">buildProduct</span>() {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">while</span> (coffee_cup.isFull) {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">try</span> {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.writeCode();
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.deployInfrastructure();
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-kw">return</span> <span
+                            class="code-str">"Scalable Web Experience Delivered 🚀"</span>;
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-kw">catch</span> (bugs) {
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.debug(bugs);
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br>
+                        &nbsp;&nbsp;}
+                        <br>
+                        };
                     </div>
                 </div>
 
                 <!-- GitHub Inspired Commit Graph -->
                 <div class="bento-box commit-bento">
                     <div class="commit-header">
-                        <h3><i class="fa-solid fa-code-commit" style="color: var(--accent-orange);"></i> Engineering Activity</h3>
+                        <h3><i class="fa-solid fa-code-commit" style="color: var(--accent-orange);"></i> Engineering
+                            Activity</h3>
                         <span style="font-size: 0.85rem; color: var(--text-secondary);">1,432 Commits (Last Year)</span>
                     </div>
                     <div class="graph-wrapper" id="contribGraph">
@@ -357,15 +416,18 @@
 
                 <!-- Experience Timeline -->
                 <div class="bento-box" style="padding: 40px;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;"><i class="fa-solid fa-briefcase" style="color: var(--accent-orange); margin-right: 10px;"></i> Work Experience</h3>
-                    
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;"><i class="fa-solid fa-briefcase"
+                            style="color: var(--accent-orange); margin-right: 10px;"></i> Work Experience</h3>
+
                     <div class="timeline">
                         <div class="tl-item">
                             <span class="tl-date">2022 - Present</span>
                             <h4 class="tl-title">Senior Full-Stack Developer</h4>
                             <p class="tl-company">Freelance / Consultant</p>
                             <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                                Leading complete lifecycle development for global clients. Architecting headless E-Commerce platforms (Shopify/React) and high-conversion SaaS dashboards. Optimizing web core vitals and technical SEO for robust digital growth.
+                                Leading complete lifecycle development for global clients. Architecting headless
+                                E-Commerce platforms (Shopify/React) and high-conversion SaaS dashboards. Optimizing web
+                                core vitals and technical SEO for robust digital growth.
                             </p>
                         </div>
                         <div class="tl-item">
@@ -373,7 +435,9 @@
                             <h4 class="tl-title">Software Engineer</h4>
                             <p class="tl-company">Tech Solutions Inc.</p>
                             <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                                Built and maintained complex enterprise applications using React and Node.js. Integrated third-party APIs, led the migration to AWS cloud infrastructure, and improved database querying efficiency by 40%.
+                                Built and maintained complex enterprise applications using React and Node.js. Integrated
+                                third-party APIs, led the migration to AWS cloud infrastructure, and improved database
+                                querying efficiency by 40%.
                             </p>
                         </div>
                         <div class="tl-item">
@@ -381,7 +445,9 @@
                             <h4 class="tl-title">Web Developer</h4>
                             <p class="tl-company">Digital Creative Agency</p>
                             <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                                Developed custom WordPress themes and plugins. Created award-winning interactive marketing sites using GSAP animations and vanilla JavaScript for high-profile client campaigns.
+                                Developed custom WordPress themes and plugins. Created award-winning interactive
+                                marketing sites using GSAP animations and vanilla JavaScript for high-profile client
+                                campaigns.
                             </p>
                         </div>
                     </div>
@@ -402,19 +468,19 @@
             const graph = document.getElementById('contribGraph');
             const weeks = 48; // Fit comfortably in container
             const classes = ['', 'sq-1', 'sq-2', 'sq-3', 'sq-4'];
-            
-            for(let i=0; i<weeks; i++) {
+
+            for (let i = 0; i < weeks; i++) {
                 const col = document.createElement('div');
                 col.className = 'graph-col';
-                
-                for(let j=0; j<7; j++) {
+
+                for (let j = 0; j < 7; j++) {
                     let rand = Math.random();
                     let level = 0;
-                    if(rand > 0.4) level = 1;
-                    if(rand > 0.7) level = 2;
-                    if(rand > 0.85) level = 3;
-                    if(rand > 0.95) level = 4;
-                    
+                    if (rand > 0.4) level = 1;
+                    if (rand > 0.7) level = 2;
+                    if (rand > 0.85) level = 3;
+                    if (rand > 0.95) level = 4;
+
                     const square = document.createElement('div');
                     square.className = `graph-sq ${classes[level]}`;
                     col.appendChild(square);
@@ -424,4 +490,5 @@
         });
     </script>
 </body>
+
 </html>

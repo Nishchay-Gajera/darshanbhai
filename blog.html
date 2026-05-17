@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Darshan Patel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -42,23 +44,43 @@
         }
 
         /* Premium Mesh Gradients */
-        .mesh-1 { background: radial-gradient(at 0% 0%, #0f2027 0, transparent 70%), radial-gradient(at 100% 100%, #203a43 0, transparent 70%), #2c5364; }
-        .mesh-2 { background: radial-gradient(at 0% 0%, #1a1a2e 0, transparent 70%), radial-gradient(at 100% 100%, #16213e 0, transparent 70%), #0f3460; }
-        .mesh-3 { background: radial-gradient(at 0% 0%, #3a1c71 0, transparent 70%), radial-gradient(at 100% 100%, #d76d77 0, transparent 70%), #ffaf7b; }
-        .mesh-4 { background: radial-gradient(at 0% 0%, #111827 0, transparent 70%), radial-gradient(at 100% 100%, #374151 0, transparent 70%), #000000; }
-        .mesh-5 { background: radial-gradient(at 0% 0%, #00416a 0, transparent 70%), radial-gradient(at 100% 100%, #e4e5e6 0, transparent 70%), #00416a; }
-        .mesh-6 { background: radial-gradient(at 0% 0%, #1c0a00 0, transparent 70%), radial-gradient(at 100% 100%, #ea580c 0, transparent 70%), #7c2d12; }
+        .mesh-1 {
+            background: radial-gradient(at 0% 0%, #0f2027 0, transparent 70%), radial-gradient(at 100% 100%, #203a43 0, transparent 70%), #2c5364;
+        }
+
+        .mesh-2 {
+            background: radial-gradient(at 0% 0%, #1a1a2e 0, transparent 70%), radial-gradient(at 100% 100%, #16213e 0, transparent 70%), #0f3460;
+        }
+
+        .mesh-3 {
+            background: radial-gradient(at 0% 0%, #3a1c71 0, transparent 70%), radial-gradient(at 100% 100%, #d76d77 0, transparent 70%), #ffaf7b;
+        }
+
+        .mesh-4 {
+            background: radial-gradient(at 0% 0%, #111827 0, transparent 70%), radial-gradient(at 100% 100%, #374151 0, transparent 70%), #000000;
+        }
+
+        .mesh-5 {
+            background: radial-gradient(at 0% 0%, #00416a 0, transparent 70%), radial-gradient(at 100% 100%, #e4e5e6 0, transparent 70%), #00416a;
+        }
+
+        .mesh-6 {
+            background: radial-gradient(at 0% 0%, #1c0a00 0, transparent 70%), radial-gradient(at 100% 100%, #ea580c 0, transparent 70%), #7c2d12;
+        }
 
         .blog-img-wrapper::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.15);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.15);
             transition: background 0.5s ease;
         }
 
         .blog-card:hover .blog-img-wrapper::after {
-            background: rgba(0,0,0,0);
+            background: rgba(0, 0, 0, 0);
         }
 
         .blog-content {
@@ -66,7 +88,7 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
         }
 
         .blog-meta {
@@ -167,16 +189,18 @@
         }
     </style>
 </head>
+
 <body>
 
     <nav class="floating-nav">
-        <div class="nav-brand">Darshan.</div>
+        <div class="nav-brand">Darshan Patel.</div>
         <div class="nav-links">
             <a href="index.html" class="magnetic" data-strength="15">Home</a>
             <a href="about.html" class="magnetic" data-strength="15">About Me</a>
             <a href="services.html" class="magnetic" data-strength="15">Services</a>
             <a href="portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
-            <a href="blog.html" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">Blog</a>
+            <a href="blog.html" class="magnetic" data-strength="15"
+                style="color: var(--text-primary); font-weight: 700;">Blog</a>
             <a href="index.html#contact" class="magnetic" data-strength="15">Contact Us</a>
         </div>
         <div class="time-module" id="local-time">Loading...</div>
@@ -186,8 +210,10 @@
         <div class="section-title text-center" style="text-align: center; margin-bottom: 60px;">
             <p class="section-eyebrow">Insights & Thoughts</p>
             <h1 style="font-size: 4.5rem; letter-spacing: -2px;">The Blog.</h1>
-            <p class="muted-text" style="font-size: 1.15rem; margin-top: 15px; max-width: 650px; margin-inline: auto; line-height: 1.6;">
-                Deep dives into software architecture, frontend performance, and my journey building scalable web experiences for global clients.
+            <p class="muted-text"
+                style="font-size: 1.15rem; margin-top: 15px; max-width: 650px; margin-inline: auto; line-height: 1.6;">
+                Deep dives into software architecture, frontend performance, and my journey building scalable web
+                experiences for global clients.
             </p>
         </div>
 
@@ -201,7 +227,9 @@
                         <span>May 12, 2026</span>
                     </div>
                     <h2 class="blog-title">Optimizing React Rendering at Enterprise Scale</h2>
-                    <p class="blog-excerpt">Discover actionable patterns and architectural decisions for reducing re-renders, improving performance metrics, and handling large data sets in massive React applications without compromising user experience.</p>
+                    <p class="blog-excerpt">Discover actionable patterns and architectural decisions for reducing
+                        re-renders, improving performance metrics, and handling large data sets in massive React
+                        applications without compromising user experience.</p>
                     <a href="#" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -215,7 +243,8 @@
                         <span>April 28, 2026</span>
                     </div>
                     <h2 class="blog-title">The Psychology of Micro-Interactions</h2>
-                    <p class="blog-excerpt">How subtle animations and feedback loops in your user interface can drastically increase conversion rates.</p>
+                    <p class="blog-excerpt">How subtle animations and feedback loops in your user interface can
+                        drastically increase conversion rates.</p>
                     <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -229,7 +258,8 @@
                         <span>April 15, 2026</span>
                     </div>
                     <h2 class="blog-title">From Monolith to Microservices</h2>
-                    <p class="blog-excerpt">A detailed walkthrough of how we transitioned a legacy E-commerce platform to a headless microservices architecture.</p>
+                    <p class="blog-excerpt">A detailed walkthrough of how we transitioned a legacy E-commerce platform
+                        to a headless microservices architecture.</p>
                     <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -243,11 +273,12 @@
                         <span>March 30, 2026</span>
                     </div>
                     <h2 class="blog-title">Technical SEO for Single Page Apps</h2>
-                    <p class="blog-excerpt">Overcoming indexing challenges of SPAs with Next.js, Server-Side Rendering, and semantic DOM configurations.</p>
+                    <p class="blog-excerpt">Overcoming indexing challenges of SPAs with Next.js, Server-Side Rendering,
+                        and semantic DOM configurations.</p>
                     <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
-            
+
             <!-- Blog Card 5 -->
             <article class="blog-card">
                 <div class="blog-img-wrapper mesh-5"></div>
@@ -257,7 +288,8 @@
                         <span>March 10, 2026</span>
                     </div>
                     <h2 class="blog-title">The Value of the "T-Shaped" Developer</h2>
-                    <p class="blog-excerpt">Why having broad knowledge across disciplines while specializing makes you an invaluable asset to any engineering team.</p>
+                    <p class="blog-excerpt">Why having broad knowledge across disciplines while specializing makes you
+                        an invaluable asset to any engineering team.</p>
                     <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -271,7 +303,8 @@
                         <span>February 22, 2026</span>
                     </div>
                     <h2 class="blog-title">My 2026 Web Development Stack</h2>
-                    <p class="blog-excerpt">An inside look at the frameworks, tools, and hardware I use daily to build high-performance applications.</p>
+                    <p class="blog-excerpt">An inside look at the frameworks, tools, and hardware I use daily to build
+                        high-performance applications.</p>
                     <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
@@ -284,4 +317,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
