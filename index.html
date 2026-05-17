@@ -161,6 +161,20 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
     </style>
 </head>
 
@@ -183,16 +197,50 @@
     <!-- First Section (Dashboard Container from screenshot) -->
     <main class="dashboard-container" id="dashboard">
         <!-- Hero Module -->
-        <div class="bento-module hero-module fade-in">
-            <div class="status-badge">
-                <span class="pulse-dot"></span> Available for New Opportunities
+        <div class="bento-module hero-module fade-in"
+            style="display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
+
+            <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 20px; position: relative; z-index: 2;">
+                <!-- Floating Avatar -->
+                <div style="width: 75px; height: 75px; border-radius: 50%; overflow: hidden; border: 2px solid var(--bento-border); background: var(--bento-bg); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-subtle); animation: float 4s ease-in-out infinite; flex-shrink: 0;">
+                    <img id="hero-photo" src="assets/darshan-patel.png" alt="Darshan Patel"
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="font-size: 2rem; display: none;">🍎</span>
+                </div>
+                <!-- Name next to it -->
+                <span style="font-family: monospace; font-size: 1.3rem; font-weight: 600; color: var(--text-secondary); letter-spacing: -0.5px;">
+                    Darshan Patel &mdash;
+                </span>
             </div>
-            <h1>Engineering Digital <br><span class="accent-text">Ecosystems.</span></h1>
-            <p class="hero-subtext">I am Darshan Patel, a Senior Full-Stack Engineer. I architect scalable
-                infrastructure and high-conversion interfaces to drive measurable business growth.</p>
-            <a href="#contact" class="btn-primary magnetic" data-strength="30">
-                Initiate Project <i class="fa-solid fa-arrow-right"></i>
+
+            <h1
+                style="position: relative; z-index: 2; margin-bottom: 15px; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1;">
+                Senior Full-Stack<br>
+                <span class="accent-text" style="display: inline-block; position: relative;">
+                    Engineer.
+                    <svg style="position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; z-index: -1; opacity: 0.3;"
+                        viewBox="0 0 200 20" preserveAspectRatio="none">
+                        <path d="M0,15 Q100,0 200,15" fill="none" stroke="var(--accent-orange)" stroke-width="8"
+                            stroke-linecap="round" />
+                    </svg>
+                </span>
+            </h1>
+
+            <p class="hero-subtext" style="position: relative; z-index: 2; margin-bottom: 25px;">
+                A tireless developer that architects scalable infrastructure and high-conversion interfaces to drive
+                measurable business growth.
+            </p>
+
+            <a href="#contact" class="btn-primary magnetic" data-strength="30"
+                style="align-self: flex-start; position: relative; z-index: 2;">
+                Let's Talk <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
             </a>
+
+            <!-- Decorative Background Element -->
+            <div
+                style="position: absolute; top: -10%; right: -5%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(234, 88, 12, 0.05) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; z-index: 1;">
+            </div>
         </div>
 
         <!-- Location Module -->
