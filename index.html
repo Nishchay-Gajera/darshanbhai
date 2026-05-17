@@ -21,6 +21,7 @@
             <a href="about.html" class="magnetic" data-strength="15">About Me</a>
             <a href="services.html" class="magnetic" data-strength="15">Services</a>
             <a href="portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
+            <a href="blog.html" class="magnetic" data-strength="15">Blog</a>
             <a href="#contact" class="magnetic" data-strength="15">Contact Us</a>
         </div>
         <div class="time-module" id="local-time">Loading...</div>
@@ -144,128 +145,91 @@
                 <button class="filter-btn cat-btn" data-filter="corporate"><i class="fa-solid fa-building"></i> Corporate</button>
                 <button class="filter-btn cat-btn" data-filter="services"><i class="fa-solid fa-concierge-bell"></i> Services</button>
                 <button class="filter-btn cat-btn" data-filter="digital"><i class="fa-solid fa-laptop-code"></i> Digital Agency</button>
-                <button class="filter-btn cat-btn" data-filter="tech"><i class="fa-solid fa-microchip"></i> Tech Platforms</button>
             </div>
 
             <!-- Project Cards Grid -->
             <div class="portfolio-grid" id="portfolioGrid">
                 <!-- Card 1: Weskini -->
-                <div class="p-card" data-category="ecommerce">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);"></div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
-                            <span class="p-card-cat">E-Commerce</span>
-                        </div>
-                        <h3 class="p-card-title">Weskini</h3>
-                        <p class="p-card-desc">A premium, high-converting E-Commerce platform designed for optimal user experience and seamless shopping.</p>
-                        <div class="p-card-tags">
-                            <span>React</span><span>Shopify Plus</span><span>GraphQL</span>
-                        </div>
+                <div class="grid-card" data-category="ecommerce">
+                    <div class="gc-img-wrapper">
+                        <img src="assets/weskini_ss.png" alt="Weskini" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2027,#203a43)';this.remove();">
                     </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">+45%</span><span class="p-stat-label">Conversion</span></div>
-                        <a href="weskini.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    <div class="gc-info">
+                        <div class="gc-cat">E-Commerce</div>
+                        <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Weskini</h3>
+                        <p class="gc-desc">A premium, high-converting E-Commerce platform designed for optimal user experience and seamless shopping.</p>
+                        <div class="gc-tags"><span>React</span><span>Shopify Plus</span><span>GraphQL</span></div>
+                        <a href="portfolio/weskini.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Card 2: Smart Card Banavo -->
-                <div class="p-card" data-category="ecommerce">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #0a1628, #1e3a5f);"></div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #60a5fa;"><i class="fa-solid fa-book-open"></i></div>
-                            <span class="p-card-cat">E-Commerce</span>
-                        </div>
-                        <h3 class="p-card-title">Pro Albums Direct</h3>
-                        <p class="p-card-desc">Premium photo book and layflat album e-commerce with a multi-step product builder for photographers.</p>
-                        <div class="p-card-tags">
-                            <span>WooCommerce</span><span>Product Builder</span>
-                        </div>
+                <!-- Card 2: Pro Albums Direct -->
+                <div class="grid-card" data-category="ecommerce">
+                    <div class="gc-img-wrapper">
+                        <img src="assets/pro-albums-direct_ss.png" alt="Pro Albums Direct" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1628,#1e3a5f)';this.remove();">
                     </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">B2B</span><span class="p-stat-label">Portal</span></div>
-                        <a href="pro-albums-direct.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    <div class="gc-info">
+                        <div class="gc-cat">E-Commerce</div>
+                        <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Pro Albums Direct</h3>
+                        <p class="gc-desc">Premium photo book and layflat album e-commerce with a multi-step product builder for photographers.</p>
+                        <div class="gc-tags"><span>WooCommerce</span><span>Product Builder</span></div>
+                        <a href="portfolio/pro-albums-direct.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 3: GK Jewel -->
-                <div class="p-card" data-category="ecommerce">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #2c3e50, #3498db);"></div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #38BDF8;"><i class="fa-solid fa-gem"></i></div>
-                            <span class="p-card-cat">Luxury Store</span>
-                        </div>
-                        <h3 class="p-card-title">GK Jewel</h3>
-                        <p class="p-card-desc">High-end jewelry e-commerce with 3D product configurators and secure checkout flows.</p>
-                        <div class="p-card-tags">
-                            <span>Tailwind</span><span>WooCommerce</span><span>Stripe API</span>
-                        </div>
+                <div class="grid-card" data-category="ecommerce">
+                    <div class="gc-img-wrapper">
+                        <img src="assets/gk-jewel_ss.png" alt="GK Jewel" onerror="this.parentElement.style.background='linear-gradient(135deg,#2c3e50,#3498db)';this.remove();">
                     </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">3D</span><span class="p-stat-label">Configurator</span></div>
-                        <a href="gk-jewel.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    <div class="gc-info">
+                        <div class="gc-cat">Luxury Store</div>
+                        <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">GK Jewel</h3>
+                        <p class="gc-desc">High-end jewelry e-commerce with 3D product configurators and secure checkout flows.</p>
+                        <div class="gc-tags"><span>Tailwind</span><span>WooCommerce</span><span>Stripe API</span></div>
+                        <a href="portfolio/gk-jewel.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 4: Ravi Fincorp -->
-                <div class="p-card" data-category="corporate">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #1c0a00, #7c2d12);"></div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #EA580C;"><i class="fa-solid fa-layer-group"></i></div>
-                            <span class="p-card-cat">Finance Portal</span>
-                        </div>
-                        <h3 class="p-card-title">Ravi Fincorp</h3>
-                        <p class="p-card-desc">Clean, trustworthy financial portal with interactive loan calculators and multi-step applications.</p>
-                        <div class="p-card-tags">
-                            <span>React</span><span>Node.js</span><span>FinTech</span>
-                        </div>
+                <div class="grid-card" data-category="corporate">
+                    <div class="gc-img-wrapper">
+                        <img src="assets/ravi-fincorp_ss.png" alt="Ravi Fincorp" onerror="this.parentElement.style.background='linear-gradient(135deg,#1c0a00,#7c2d12)';this.remove();">
                     </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">2x</span><span class="p-stat-label">Lead Gen</span></div>
-                        <a href="ravi-fincorp.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    <div class="gc-info">
+                        <div class="gc-cat">Finance Portal</div>
+                        <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Ravi Fincorp</h3>
+                        <p class="gc-desc">Clean, trustworthy financial portal with interactive loan calculators and multi-step applications.</p>
+                        <div class="gc-tags"><span>React</span><span>Node.js</span><span>FinTech</span></div>
+                        <a href="portfolio/ravi-fincorp.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Card 5: Leo Stainless LLP -->
-                <div class="p-card" data-category="industrial">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #1a1a2e, #16213e);"></div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #60a5fa;"><i class="fa-solid fa-snowflake"></i></div>
-                            <span class="p-card-cat">Industrial & Trading</span>
-                        </div>
-                        <h3 class="p-card-title">Gayatri Refrigeration</h3>
-                        <p class="p-card-desc">Commercial cold storage and industrial refrigeration solutions provider with enterprise-grade B2B digital presence.</p>
-                        <div class="p-card-tags">
-                            <span>B2B Portal</span><span>Cold Storage</span>
-                        </div>
+                <!-- Card 5: Gayatri Refrigeration -->
+                <div class="grid-card" data-category="industrial">
+                    <div class="gc-img-wrapper">
+                        <img src="assets/gayatri-refrigeration_ss.png" alt="Gayatri Refrigeration" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                     </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">B2B</span><span class="p-stat-label">Sales</span></div>
-                        <a href="gayatri-refrigeration.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    <div class="gc-info">
+                        <div class="gc-cat">Industrial & Trading</div>
+                        <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Gayatri Refrigeration</h3>
+                        <p class="gc-desc">Commercial cold storage and industrial refrigeration solutions provider with enterprise-grade B2B digital presence.</p>
+                        <div class="gc-tags"><span>B2B Portal</span><span>Cold Storage</span></div>
+                        <a href="portfolio/gayatri-refrigeration.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Card 6: Bright Digital Agency -->
-                <div class="p-card" data-category="digital">
-                    <div class="p-card-accent" style="background: linear-gradient(135deg, #374151, #111827);"></div>
-                    <div class="p-card-body">
-                        <div class="p-card-top">
-                            <div class="p-stack-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
-                            <span class="p-card-cat">Agency Portfolio</span>
-                        </div>
-                        <h3 class="p-card-title">Bright Digital</h3>
-                        <p class="p-card-desc">Highly interactive, animated web experience utilizing GSAP for smooth scrolling and micro-interactions.</p>
-                        <div class="p-card-tags">
-                            <span>React</span><span>GSAP</span><span>Conversion UI</span>
-                        </div>
+                <div class="grid-card" data-category="digital">
+                    <div class="gc-img-wrapper">
+                        <img src="assets/bright-digital-agency_ss.png" alt="Bright Digital Agency" onerror="this.parentElement.style.background='linear-gradient(135deg,#374151,#111827)';this.remove();">
                     </div>
-                    <div class="p-card-footer">
-                        <div class="p-stat"><span class="p-stat-num">99</span><span class="p-stat-label">Lighthouse</span></div>
-                        <a href="bright-digital-agency.html" class="p-card-link"><i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
+                    <div class="gc-info">
+                        <div class="gc-cat">Agency Portfolio</div>
+                        <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Bright Digital</h3>
+                        <p class="gc-desc">Highly interactive, animated web experience utilizing GSAP for smooth scrolling and micro-interactions.</p>
+                        <div class="gc-tags"><span>React</span><span>GSAP</span><span>Conversion UI</span></div>
+                        <a href="portfolio/bright-digital-agency.html" class="btn-primary magnetic" data-strength="15" style="align-self:flex-start;margin-top:auto;">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- /portfolio-grid -->
