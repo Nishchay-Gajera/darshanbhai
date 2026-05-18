@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
     background-color: var(--bg-color);
@@ -89,7 +93,7 @@ body {
     margin: 100px auto 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 }
 
 .bento-box {
@@ -471,6 +475,16 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    z-index: 1001;
+    padding: 5px;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .bento-grid {
@@ -515,12 +529,50 @@ footer {
 
 @media (max-width: 768px) {
     .floating-nav {
-        width: 90%;
-        justify-content: space-between;
+        /* Keep it as max-content pill */
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        width: 280px;
+        height: 100vh;
+        background: rgba(22, 22, 22, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid var(--bento-border);
+        border-radius: 0;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        flex-direction: column;
+        padding: 90px 40px 40px;
+        gap: 25px;
+        display: flex;
+        text-align: left;
+        margin-top: 0;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 999;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav-links a {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-cta {
+        display: none; /* Might want to keep it or hide it, let's hide or keep inside? The hamburger will toggle nav-links but nav-cta is separate. Let's leave nav-cta or adjust if needed. */
     }
 
     .bento-grid {

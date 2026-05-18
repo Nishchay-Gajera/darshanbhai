@@ -5,6 +5,37 @@ document.addEventListener('DOMContentLoaded', () => {
         yearElement.textContent = new Date().getFullYear();
     }
 
+    // Hamburger Menu Logic
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        const toggleMenu = () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (icon) {
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        };
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    }
+
     // Live Local Time in Ahmedabad
     const timeElement = document.getElementById('local-time');
     function updateTime() {
@@ -85,6 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.add('hidden');
                 }
             });
+            
+            // Refresh ScrollTrigger to fix blank page issue after layout change
+            if (typeof ScrollTrigger !== 'undefined') {
+                setTimeout(() => ScrollTrigger.refresh(), 100);
+            }
         });
     });
 });
