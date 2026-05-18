@@ -890,7 +890,7 @@ footer {
     .contact-info h2 { font-size: clamp(2rem, 8vw, 3rem); }
     
     .bento-container { padding: 0 15px; }
-    .hero-module, .location-module, .stack-module, .exp-module, .philosophy-module, .service-bento-card {
+    .hero-module, .location-module, .stack-module, .exp-module, .philosophy-module, .service-bento-card, .bento-box {
         padding: 25px;
     }
     .contact-wrapper { padding: 0; }

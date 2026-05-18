@@ -251,6 +251,7 @@
     font-size: 1.8rem;
     flex-shrink: 0;
     border: 3px solid var(--bento-border);
+    overflow: hidden;
 }
 
 .blog-author-info h4 {

@@ -431,6 +431,20 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 768px) {
+            .profile-bento {
+                padding: 30px 15px;
+            }
+            
+            .commit-bento {
+                padding: 20px;
+            }
+            
+            .ide-body {
+                padding: 20px;
+            }
+        }
     
 /* --- CSS from portfolio.html --- */
 
