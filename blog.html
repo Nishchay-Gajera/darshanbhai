@@ -9,185 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .blog-card {
-            background: var(--bento-bg);
-            border: 1px solid var(--bento-border);
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-        }
-
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(234, 88, 12, 0.3);
-            box-shadow: 0 25px 50px -12px rgba(234, 88, 12, 0.15);
-        }
-
-        .blog-img-wrapper {
-            height: 260px;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Premium Mesh Gradients */
-        .mesh-1 {
-            background: radial-gradient(at 0% 0%, #0f2027 0, transparent 70%), radial-gradient(at 100% 100%, #203a43 0, transparent 70%), #2c5364;
-        }
-
-        .mesh-2 {
-            background: radial-gradient(at 0% 0%, #1a1a2e 0, transparent 70%), radial-gradient(at 100% 100%, #16213e 0, transparent 70%), #0f3460;
-        }
-
-        .mesh-3 {
-            background: radial-gradient(at 0% 0%, #3a1c71 0, transparent 70%), radial-gradient(at 100% 100%, #d76d77 0, transparent 70%), #ffaf7b;
-        }
-
-        .mesh-4 {
-            background: radial-gradient(at 0% 0%, #111827 0, transparent 70%), radial-gradient(at 100% 100%, #374151 0, transparent 70%), #000000;
-        }
-
-        .mesh-5 {
-            background: radial-gradient(at 0% 0%, #00416a 0, transparent 70%), radial-gradient(at 100% 100%, #e4e5e6 0, transparent 70%), #00416a;
-        }
-
-        .mesh-6 {
-            background: radial-gradient(at 0% 0%, #1c0a00 0, transparent 70%), radial-gradient(at 100% 100%, #ea580c 0, transparent 70%), #7c2d12;
-        }
-
-        .blog-img-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.15);
-            transition: background 0.5s ease;
-        }
-
-        .blog-card:hover .blog-img-wrapper::after {
-            background: rgba(0, 0, 0, 0);
-        }
-
-        .blog-content {
-            padding: 35px 30px 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
-        }
-
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .blog-category {
-            color: var(--accent-orange);
-            background: rgba(234, 88, 12, 0.08);
-            border: 1px solid rgba(234, 88, 12, 0.2);
-            padding: 6px 16px;
-            border-radius: 100px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .blog-card:hover .blog-category {
-            background: var(--accent-orange);
-            color: white;
-            box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
-        }
-
-        .blog-title {
-            font-size: 1.55rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            line-height: 1.35;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-            transition: color 0.3s ease;
-        }
-
-        .blog-card:hover .blog-title {
-            color: var(--accent-orange);
-        }
-
-        .blog-excerpt {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-
-        .read-more {
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            margin-top: auto;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding-top: 20px;
-            border-top: 1px solid var(--bento-border);
-        }
-
-        .read-more i {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            background: var(--bg-color);
-            padding: 10px;
-            border-radius: 50%;
-            border: 1px solid var(--bento-border);
-            color: var(--text-secondary);
-        }
-
-        .blog-card:hover .read-more {
-            color: var(--accent-orange);
-        }
-
-        .blog-card:hover .read-more i {
-            transform: scale(1.1) rotate(-45deg);
-            background: var(--accent-orange);
-            color: white;
-            border-color: var(--accent-orange);
-            box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
-        }
-
-        @media (max-width: 1024px) {
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/components.css">
 </head>
 
 <body>
@@ -210,18 +32,14 @@
     <main class="bento-container">
         <div class="section-title text-center" style="text-align: center; margin-bottom: 60px;">
             <p class="section-eyebrow">Insights & Thoughts</p>
-            <h1 style="font-size: 4.5rem; letter-spacing: -2px;">The Blog.</h1>
-            <p class="muted-text"
-                style="font-size: 1.15rem; margin-top: 15px; max-width: 650px; margin-inline: auto; line-height: 1.6;">
-                Deep dives into software architecture, frontend performance, and my journey building scalable web
-                experiences for global clients.
-            </p>
+            <h1 class="page-title">The Blog.</h1>
+            <p class="page-subtitle">Deep dives into software architecture, frontend performance, and my journey building scalable web experiences for global clients.</p>
         </div>
 
         <div class="blog-grid fade-in">
             <!-- Blog Card 1 -->
             <article class="blog-card">
-                <div class="blog-img-wrapper mesh-1"></div>
+                <div class="blog-img-wrapper"><img src="assets/react_rendering.png" alt="Optimizing React Rendering at Enterprise Scale" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span class="blog-category">Engineering</span>
@@ -231,13 +49,13 @@
                     <p class="blog-excerpt">Discover actionable patterns and architectural decisions for reducing
                         re-renders, improving performance metrics, and handling large data sets in massive React
                         applications without compromising user experience.</p>
-                    <a href="#" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="blog/optimizing-react-rendering.html" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
 
             <!-- Blog Card 2 -->
             <article class="blog-card">
-                <div class="blog-img-wrapper mesh-2"></div>
+                <div class="blog-img-wrapper"><img src="assets/micro_interactions.png" alt="The Psychology of Micro-Interactions" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span class="blog-category">UX Design</span>
@@ -246,13 +64,13 @@
                     <h2 class="blog-title">The Psychology of Micro-Interactions</h2>
                     <p class="blog-excerpt">How subtle animations and feedback loops in your user interface can
                         drastically increase conversion rates.</p>
-                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="blog/psychology-of-micro-interactions.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
 
             <!-- Blog Card 3 -->
             <article class="blog-card">
-                <div class="blog-img-wrapper mesh-3"></div>
+                <div class="blog-img-wrapper"><img src="assets/microservices.png" alt="From Monolith to Microservices" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span class="blog-category">Architecture</span>
@@ -261,13 +79,13 @@
                     <h2 class="blog-title">From Monolith to Microservices</h2>
                     <p class="blog-excerpt">A detailed walkthrough of how we transitioned a legacy E-commerce platform
                         to a headless microservices architecture.</p>
-                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="blog/monolith-to-microservices.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
 
             <!-- Blog Card 4 -->
             <article class="blog-card">
-                <div class="blog-img-wrapper mesh-4"></div>
+                <div class="blog-img-wrapper"><img src="assets/tech_seo.png" alt="Technical SEO for Single Page Apps" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span class="blog-category">SEO</span>
@@ -276,40 +94,11 @@
                     <h2 class="blog-title">Technical SEO for Single Page Apps</h2>
                     <p class="blog-excerpt">Overcoming indexing challenges of SPAs with Next.js, Server-Side Rendering,
                         and semantic DOM configurations.</p>
-                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Blog Card 5 -->
-            <article class="blog-card">
-                <div class="blog-img-wrapper mesh-5"></div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Career</span>
-                        <span>March 10, 2026</span>
-                    </div>
-                    <h2 class="blog-title">The Value of the "T-Shaped" Developer</h2>
-                    <p class="blog-excerpt">Why having broad knowledge across disciplines while specializing makes you
-                        an invaluable asset to any engineering team.</p>
-                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Blog Card 6 -->
-            <article class="blog-card">
-                <div class="blog-img-wrapper mesh-6"></div>
-                <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="blog-category">Tools</span>
-                        <span>February 22, 2026</span>
-                    </div>
-                    <h2 class="blog-title">My 2026 Web Development Stack</h2>
-                    <p class="blog-excerpt">An inside look at the frameworks, tools, and hardware I use daily to build
-                        high-performance applications.</p>
-                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="blog/technical-seo-spa.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
         </div>
+
     </main>
 
     <footer>

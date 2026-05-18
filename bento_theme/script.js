@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && navLinks) {
         const toggleMenu = () => {
             navLinks.classList.toggle('active');
+
+            // Prevent body scroll when menu is open and add menu-open class for CSS hooks
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
+            }
+
             const icon = hamburger.querySelector('i');
             if (icon) {
                 if (navLinks.classList.contains('active')) {

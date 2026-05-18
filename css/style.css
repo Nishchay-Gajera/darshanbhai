@@ -15,6 +15,22 @@
     --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
+/* Reusable Page Headers */
+.page-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    letter-spacing: -2px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    line-height: 1.6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -802,7 +818,17 @@ footer {
     .hero-module, .location-module, .stack-module, .exp-module, .philosophy-module { grid-column: span 1; }
     .services-bento { grid-template-columns: 1fr; }
     .floating-nav { 
-        position: relative; /* Fixed relative positioning for dropdown */
+        width: 92%;
+        top: 15px;
+        z-index: 1001;
+        transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    body.menu-open .floating-nav {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
     }
     .hamburger {
         display: block;
@@ -810,34 +836,71 @@ footer {
     .nav-links { 
         position: fixed;
         top: 0;
+        left: 0;
         right: 0;
-        transform: translateX(100%);
-        width: 280px;
+        bottom: 0;
+        width: 100vw;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-left: 1px solid var(--bento-border);
-        border-radius: 0;
-        border-top: none;
-        border-bottom: none;
-        border-right: none;
+        height: 100dvh;
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: none;
         flex-direction: column;
-        padding: 90px 40px 40px;
-        gap: 25px;
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        gap: 35px;
         display: flex; 
-        text-align: left;
+        text-align: center;
         margin-top: 0;
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 999; /* Below floating-nav which is 1000 */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        z-index: 999;
     }
     .nav-links a {
-        font-size: 1.1rem;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text-primary);
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
     }
     .nav-links.active {
-        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
+    .nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
+    .nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+    .nav-links.active a:nth-child(5) { transition-delay: 0.3s; }
+    .nav-links.active a:nth-child(6) { transition-delay: 0.35s; }
+    
+    /* Responsive Fixes for Typography and Spacing */
+    .hero-module h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+    .hero-title .emphasis { font-size: clamp(3rem, 10vw, 5rem); }
+    .exp-module h2 { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .contact-info h2 { font-size: clamp(2rem, 8vw, 3rem); }
+    
+    .bento-container { padding: 0 15px; }
+    .hero-module, .location-module, .stack-module, .exp-module, .philosophy-module, .service-bento-card {
+        padding: 25px;
+    }
+    .contact-wrapper { padding: 0; }
+    
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    img, svg, video {
+        max-width: 100%;
+        height: auto;
     }
     .time-module {
         display: none !important;
@@ -854,7 +917,7 @@ footer {
 /* GRID LAYOUT FOR PORTFOLIO CARDS */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
     gap: 30px;
     padding-bottom: 100px;
 }

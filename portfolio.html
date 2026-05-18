@@ -11,159 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .category-filter {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 60px;
-        }
-
-        .cat-btn {
-            padding: 10px 22px;
-            border-radius: 100px;
-            border: 1px solid var(--bento-border);
-            background: var(--bento-bg);
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: .85rem;
-            font-family: inherit;
-            cursor: pointer;
-            transition: all .3s ease;
-            box-shadow: var(--shadow-subtle);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .cat-btn:hover {
-            border-color: var(--accent-orange);
-            color: var(--accent-orange);
-            transform: translateY(-2px);
-        }
-
-        .cat-btn.active {
-            background: var(--text-primary);
-            color: white;
-            border-color: var(--text-primary);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 30px;
-            padding-bottom: 100px;
-        }
-
-        .grid-card {
-            background: var(--bento-bg);
-            border: 1px solid var(--bento-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all .4s cubic-bezier(.16, 1, .3, 1);
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .02);
-        }
-
-        .grid-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-orange);
-            box-shadow: 0 20px 40px rgba(234, 88, 12, .08);
-        }
-
-        .grid-card.hidden {
-            display: none !important;
-        }
-
-        .gc-img-wrapper {
-            height: 240px;
-            width: 100%;
-            overflow: hidden;
-            border-bottom: 1px solid var(--bento-border);
-            position: relative;
-        }
-
-        .gc-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-            transition: transform .7s cubic-bezier(.16, 1, .3, 1);
-        }
-
-        .grid-card:hover .gc-img-wrapper img {
-            transform: scale(1.06);
-        }
-
-        .gc-info {
-            padding: 35px 30px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            position: relative;
-        }
-
-        .gc-cat {
-            font-size: .75rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gc-cat::before {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background: var(--accent-orange);
-        }
-
-        .gc-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 15px;
-            line-height: 1.2;
-            letter-spacing: -.5px;
-        }
-
-        .gc-desc {
-            color: var(--text-secondary);
-            font-size: .95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        .gc-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 25px;
-        }
-
-        .gc-tags span {
-            padding: 6px 14px;
-            background: var(--bg-color);
-            border-radius: 100px;
-            font-size: .75rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            border: 1px solid var(--bento-border);
-        }
-
-        @media(max-width:768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/components.css">
 </head>
 
 <body>
@@ -185,9 +33,8 @@
     <main class="bento-container">
         <div class="section-title text-center" style="text-align:center;margin-bottom:40px;">
             <p class="section-eyebrow">Project Showcase</p>
-            <h1 style="font-size:4.5rem;letter-spacing:-2px;">Selected Work.</h1>
-            <p class="muted-text" style="font-size:1.1rem;margin-top:15px;">21+ client projects delivered. Filter by
-                industry below.</p>
+            <h1 class="page-title">Selected Work.</h1>
+            <p class="page-subtitle">21+ client projects delivered. Filter by industry below.</p>
         </div>
 
         <div class="category-filter fade-in">
@@ -661,22 +508,7 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.cat-btn');
-            const gridCards = document.querySelectorAll('.grid-card');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    const f = btn.getAttribute('data-filter');
-                    gridCards.forEach(card => {
-                        card.classList.toggle('hidden', f !== 'all' && card.getAttribute('data-category') !== f);
-                    });
-                });
-            });
-        });
-    </script>
+    
 </body>
 
 </html>

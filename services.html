@@ -9,19 +9,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .service-page-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .service-features {
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--bento-border);
-        }
-    </style>
+    <link rel="stylesheet" href="css/components.css">
 </head>
 
 <body>
@@ -41,16 +29,16 @@
     </nav>
 
     <main class="bento-container">
-        <div class="bento-module fade-in"
-            style="background: linear-gradient(135deg, #ffffff 0%, #fffcf9 100%); text-align: center; padding: 60px 20px;">
-            <h1 style="font-size: 4rem; margin-bottom: 20px;">Engineering <span class="accent-text">Solutions.</span>
-            </h1>
-            <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Comprehensive
-                technical architectures and design systems built to scale your business and outpace the competition.</p>
+        <div class="section-title text-center fade-in" style="text-align: center; margin-bottom: 60px;">
+            <p class="section-eyebrow">My Expertise</p>
+            <h1 class="page-title">Engineering <span class="accent-text">Solutions.</span></h1>
+            <p class="page-subtitle" style="margin-top: 15px; max-width: 650px; margin-inline: auto;">
+                Comprehensive technical architectures and design systems built to scale your business and outpace the competition.
+            </p>
         </div>
 
         <div class="services-bento"
-            style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 20px;">
+            style="gap: 30px; margin-top: 20px;">
             <div class="bento-box service-page-item fade-in">
                 <div>
                     <i class="fa-solid fa-laptop-code"

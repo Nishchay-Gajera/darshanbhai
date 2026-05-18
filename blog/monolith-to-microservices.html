@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Monolith to Microservices | Darshan Patel Blog</title>
+    <meta name="description" content="A detailed, honest walkthrough of how we transitioned a legacy e-commerce platform to a headless microservices architecture — what worked, what didn't.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar" id="readingProgress"></div>
+
+    <nav class="floating-nav">
+        <div class="nav-brand">Darshan Patel.</div>
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="../index.html" class="magnetic" data-strength="15">Home</a>
+            <a href="../about.html" class="magnetic" data-strength="15">About Me</a>
+            <a href="../services.html" class="magnetic" data-strength="15">Services</a>
+            <a href="../portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
+            <a href="../blog.html" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">Blog</a>
+            <a href="../contact.html" class="magnetic" data-strength="15">Contact Us</a>
+        </div>
+        <div class="time-module" id="local-time">Loading...</div>
+    </nav>
+
+        <!-- Article -->
+    <main class="bento-container">
+        <div class="blog-hero fade-in">
+            <div class="blog-meta-tags">
+                <span class="blog-category-badge">Architecture</span>
+                <span class="blog-dot">·</span>
+                <span>April 15, 2026</span>
+                <span class="blog-dot">·</span>
+                <span><i class="fa-regular fa-clock"></i> 9 min read</span>
+            </div>
+            <h1 class="blog-post-title">From Monolith to Microservices</h1>
+            <p class="blog-subtitle">A detailed, honest walkthrough of how we transitioned a legacy e-commerce platform to a headless microservices architecture — what worked, what didn't.</p>
+        </div>
+
+        <img src="../assets/microservices.png" alt="From Monolith to Microservices" class="blog-featured-img fade-in">
+        <div class="blog-article-wrapper">
+
+            <!-- Sticky TOC -->
+            <aside class="blog-toc" id="blogToc">
+                <div class="blog-toc-title">In This Article</div>
+                <ul>
+                    <li><a href="#the-monolith-wasn't-the-problem">The Monolith Wasn't the Problem</a></li>
+<li><a href="#the-strangler-fig-pattern">The Strangler Fig Pattern</a></li>
+<li><a href="#the-hidden-costs-nobody-warns-you-about">The Hidden Costs Nobody Warns You About</a></li>
+<li><a href="#the-result-after-14-months">The Result After 14 Months</a></li>
+
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <article class="blog-content-body" id="blogContent">
+                <p class="blog-lead">A detailed, honest walkthrough of how we transitioned a legacy e-commerce platform to a headless microservices architecture — what worked, what didn't.</p>
+                
+            <h2 id="the-monolith-wasn't-the-problem">The Monolith Wasn't the Problem</h2>
+            <p>Let's get the controversial take out of the way first: the monolith wasn't the actual problem. The <em>unmodularized</em> monolith was the problem. Microservices are a solution to organizational and scaling challenges, not an inherently superior architecture.<br><br>Our platform had a 6-year-old PHP monolith serving 50,000 daily active users. Deployment took 45 minutes. A bug in the checkout module could break the product search. We had 3 teams stepping on each other's changes daily. <em>That</em> is when microservices become the right answer.</p>
+            <h2 id="the-strangler-fig-pattern">The Strangler Fig Pattern</h2>
+            <p>We did not do a big-bang rewrite. Big-bang rewrites kill companies. Instead, we used the <strong>Strangler Fig Pattern</strong> — named after the fig tree that gradually grows around a host tree until it replaces it entirely.<br><br>We identified the highest-value, lowest-dependency modules first: the product catalog and the user authentication service. These became our first two independent microservices, running behind an API gateway while the rest of the monolith continued serving traffic unchanged.</p>
+            <div class="blog-callout">
+                <p>⚠️ If someone suggests a full rewrite from day one, that's a red flag. Incremental strangling is almost always safer and more valuable.</p>
+            </div>
+            <h2 id="the-hidden-costs-nobody-warns-you-about">The Hidden Costs Nobody Warns You About</h2>
+            <p>Microservices introduce distributed systems complexity. You now have network latency between services that used to be in-process function calls. You need distributed tracing, centralized logging, and service health monitoring from day one — not as an afterthought.<br><br>Our biggest mistake was underestimating the infrastructure investment. Kubernetes, a service mesh, an API gateway, a message broker — these are not optional. Build the platform before you build the services.</p>
+            <h2 id="the-result-after-14-months">The Result After 14 Months</h2>
+            <p>Deployment time dropped from 45 minutes to under 4 minutes per service. Each team owns and deploys their service independently. We handle 3x the traffic on the same infrastructure budget, because we can scale the catalog service independently from checkout.<br><br>It was hard. It took longer than we planned. It was worth it.</p>
+
+                <hr class="blog-divider">
+
+                <!-- Author Card -->
+                <div class="blog-author-card">
+                    <div class="blog-author-avatar">👨‍💻</div>
+                    <div class="blog-author-info">
+                        <h4>Darshan Patel</h4>
+                        <p>Full-Stack Developer &amp; Digital Architect based in Ahmedabad, India. Building scalable web experiences for 21+ global clients.</p>
+                        <a href="../contact.html" class="blog-author-cta">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post Navigation -->
+                <div class="post-nav-row"><a href="psychology-of-micro-interactions.html" class="post-nav-btn"><i class="fa-solid fa-arrow-left"></i><span><small>Previous</small>The Psychology of Micro-Interactions</span></a><a href="technical-seo-spa.html" class="post-nav-btn post-nav-btn--next"><span><small>Next</small>Technical SEO for Single Page Apps</span><i class="fa-solid fa-arrow-right"></i></a></div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Reading progress bar
+        const bar = document.getElementById('readingProgress');
+        const content = document.getElementById('blogContent');
+        window.addEventListener('scroll', () => {
+            const start = content.offsetTop;
+            const end = start + content.offsetHeight - window.innerHeight;
+            const progress = Math.min(Math.max((window.scrollY - start) / (end - start) * 100, 0), 100);
+            bar.style.width = progress + '%';
+        });
+
+        // Active TOC highlight
+        const tocLinks = document.querySelectorAll('.blog-toc a');
+        const headings = document.querySelectorAll('.blog-content-body h2');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            headings.forEach(h => {
+                if (window.scrollY >= h.offsetTop - 140) current = h.id;
+            });
+            tocLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>

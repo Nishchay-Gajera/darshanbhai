@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing React Rendering at Enterprise Scale | Darshan Patel Blog</title>
+    <meta name="description" content="Discover actionable patterns and architectural decisions for reducing re-renders and handling large data sets without sacrificing user experience.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar" id="readingProgress"></div>
+
+    <nav class="floating-nav">
+        <div class="nav-brand">Darshan Patel.</div>
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="../index.html" class="magnetic" data-strength="15">Home</a>
+            <a href="../about.html" class="magnetic" data-strength="15">About Me</a>
+            <a href="../services.html" class="magnetic" data-strength="15">Services</a>
+            <a href="../portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
+            <a href="../blog.html" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">Blog</a>
+            <a href="../contact.html" class="magnetic" data-strength="15">Contact Us</a>
+        </div>
+        <div class="time-module" id="local-time">Loading...</div>
+    </nav>
+
+        <!-- Article -->
+    <main class="bento-container">
+        <div class="blog-hero fade-in">
+            <div class="blog-meta-tags">
+                <span class="blog-category-badge">Engineering</span>
+                <span class="blog-dot">·</span>
+                <span>May 12, 2026</span>
+                <span class="blog-dot">·</span>
+                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+            </div>
+            <h1 class="blog-post-title">Optimizing React Rendering at Enterprise Scale</h1>
+            <p class="blog-subtitle">Discover actionable patterns and architectural decisions for reducing re-renders and handling large data sets without sacrificing user experience.</p>
+        </div>
+
+        <img src="../assets/react_rendering.png" alt="Optimizing React Rendering at Enterprise Scale" class="blog-featured-img fade-in">
+        <div class="blog-article-wrapper">
+
+            <!-- Sticky TOC -->
+            <aside class="blog-toc" id="blogToc">
+                <div class="blog-toc-title">In This Article</div>
+                <ul>
+                    <li><a href="#why-re-renders-kill-performance">Why Re-Renders Kill Performance</a></li>
+<li><a href="#memoization-is-not-magic">Memoization Is Not Magic</a></li>
+<li><a href="#virtualization-for-large-lists">Virtualization for Large Lists</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <article class="blog-content-body" id="blogContent">
+                <p class="blog-lead">Discover actionable patterns and architectural decisions for reducing re-renders and handling large data sets without sacrificing user experience.</p>
+                
+            <h2 id="why-re-renders-kill-performance">Why Re-Renders Kill Performance</h2>
+            <p>At enterprise scale, a single misplaced <code>useEffect</code> or an unstable object reference can cascade into thousands of unnecessary re-renders per second. I've seen production dashboards grind to a halt — not because of slow network calls, but because of avoidable React tree reconciliations.<br><br>The problem isn't React itself. React is fast by design. The problem is patterns that feel innocent in a small codebase but explode in complexity when your component tree has 400+ nodes.</p>
+            <h2 id="memoization-is-not-magic">Memoization Is Not Magic</h2>
+            <p>Many developers reach for <code>React.memo</code>, <code>useMemo</code>, and <code>useCallback</code> as silver bullets. They are not. Each has a comparison cost. Wrapping every component in <code>React.memo</code> can actually <em>increase</em> memory usage and slow your app down.<br><br>The real technique is <strong>colocating state</strong> — keeping state as close to where it's used as possible. If only a leaf node needs a piece of state, it shouldn't live in a root provider. This single architectural principle eliminates a majority of unnecessary renders before you even open your DevTools.</p>
+            <div class="blog-callout">
+                <p>💡 Rule of thumb: Only reach for <code>useMemo</code> after profiling proves a bottleneck. Premature memoization is a maintenance burden, not an optimisation.</p>
+            </div>
+            <h2 id="virtualization-for-large-lists">Virtualization for Large Lists</h2>
+            <p>When rendering lists of 500+ items, the DOM becomes the bottleneck, not JavaScript. Libraries like <strong>react-window</strong> and <strong>TanStack Virtual</strong> solve this with windowing — only rendering the DOM nodes currently visible in the viewport.<br><br>Pair virtualization with a <strong>stable key strategy</strong>. Using array indices as keys is the leading cause of ghost rendering bugs. Always key from a stable, unique ID from your data source.</p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p>Enterprise-scale React performance is a discipline, not a plugin. Profile first with React DevTools Profiler, identify the actual bottleneck, and apply the minimum targeted fix. The biggest gains usually come from state architecture decisions made on day one, not from adding libraries later.</p>
+
+                <hr class="blog-divider">
+
+                <!-- Author Card -->
+                <div class="blog-author-card">
+                    <div class="blog-author-avatar">👨‍💻</div>
+                    <div class="blog-author-info">
+                        <h4>Darshan Patel</h4>
+                        <p>Full-Stack Developer &amp; Digital Architect based in Ahmedabad, India. Building scalable web experiences for 21+ global clients.</p>
+                        <a href="../contact.html" class="blog-author-cta">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post Navigation -->
+                <div class="post-nav-row"><a href="psychology-of-micro-interactions.html" class="post-nav-btn post-nav-btn--next"><span><small>Next</small>The Psychology of Micro-Interactions</span><i class="fa-solid fa-arrow-right"></i></a></div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Reading progress bar
+        const bar = document.getElementById('readingProgress');
+        const content = document.getElementById('blogContent');
+        window.addEventListener('scroll', () => {
+            const start = content.offsetTop;
+            const end = start + content.offsetHeight - window.innerHeight;
+            const progress = Math.min(Math.max((window.scrollY - start) / (end - start) * 100, 0), 100);
+            bar.style.width = progress + '%';
+        });
+
+        // Active TOC highlight
+        const tocLinks = document.querySelectorAll('.blog-toc a');
+        const headings = document.querySelectorAll('.blog-content-body h2');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            headings.forEach(h => {
+                if (window.scrollY >= h.offsetTop - 140) current = h.id;
+            });
+            tocLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>

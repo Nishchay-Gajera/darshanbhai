@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical SEO for Single Page Apps | Darshan Patel Blog</title>
+    <meta name="description" content="Overcoming the indexing and crawlability challenges of SPAs with Next.js, Server-Side Rendering, and semantic DOM configurations.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar" id="readingProgress"></div>
+
+    <nav class="floating-nav">
+        <div class="nav-brand">Darshan Patel.</div>
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="../index.html" class="magnetic" data-strength="15">Home</a>
+            <a href="../about.html" class="magnetic" data-strength="15">About Me</a>
+            <a href="../services.html" class="magnetic" data-strength="15">Services</a>
+            <a href="../portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
+            <a href="../blog.html" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">Blog</a>
+            <a href="../contact.html" class="magnetic" data-strength="15">Contact Us</a>
+        </div>
+        <div class="time-module" id="local-time">Loading...</div>
+    </nav>
+
+        <!-- Article -->
+    <main class="bento-container">
+        <div class="blog-hero fade-in">
+            <div class="blog-meta-tags">
+                <span class="blog-category-badge">SEO</span>
+                <span class="blog-dot">·</span>
+                <span>March 30, 2026</span>
+                <span class="blog-dot">·</span>
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+            </div>
+            <h1 class="blog-post-title">Technical SEO for Single Page Apps</h1>
+            <p class="blog-subtitle">Overcoming the indexing and crawlability challenges of SPAs with Next.js, Server-Side Rendering, and semantic DOM configurations.</p>
+        </div>
+
+        <img src="../assets/tech_seo.png" alt="Technical SEO for Single Page Apps" class="blog-featured-img fade-in">
+        <div class="blog-article-wrapper">
+
+            <!-- Sticky TOC -->
+            <aside class="blog-toc" id="blogToc">
+                <div class="blog-toc-title">In This Article</div>
+                <ul>
+                    <li><a href="#why-googlebot-struggles-with-spas">Why Googlebot Struggles with SPAs</a></li>
+<li><a href="#server-side-rendering-is-the-solution">Server-Side Rendering Is the Solution</a></li>
+<li><a href="#semantic-html-is-non-negotiable">Semantic HTML Is Non-Negotiable</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <article class="blog-content-body" id="blogContent">
+                <p class="blog-lead">Overcoming the indexing and crawlability challenges of SPAs with Next.js, Server-Side Rendering, and semantic DOM configurations.</p>
+                
+            <h2 id="why-googlebot-struggles-with-spas">Why Googlebot Struggles with SPAs</h2>
+            <p>A traditional website serves fully-rendered HTML on each page request. Googlebot reads it immediately. A Single Page Application (SPA) serves a near-empty HTML shell and relies on JavaScript to render content in the browser.<br><br>The problem: Googlebot's JavaScript rendering is deferred and runs in a queue that can take <strong>days to weeks</strong>. Your content may not be indexed for weeks after deployment. In competitive markets, that's a death sentence for organic traffic.</p>
+            <h2 id="server-side-rendering-is-the-solution">Server-Side Rendering Is the Solution</h2>
+            <p>Server-Side Rendering (SSR) with Next.js solves this at the framework level. With <code>getServerSideProps</code> or the newer App Router with React Server Components, your pages are rendered to full HTML on the server before being sent to the browser.<br><br>Googlebot receives the same complete HTML a human browser would. There is no JavaScript to wait for. Your content is indexable immediately upon crawl.</p>
+            <div class="blog-callout">
+                <p>🔍 Quick win: Use Google Search Console's URL Inspection Tool to render any page as Googlebot sees it. If you see blank or missing content, you have an SSR problem.</p>
+            </div>
+            <h2 id="semantic-html-is-non-negotiable">Semantic HTML Is Non-Negotiable</h2>
+            <p>JavaScript frameworks make it easy to build everything out of <code>&lt;div&gt;</code> tags. This is an SEO catastrophe. Search engines weight content differently based on the HTML element it lives in.<br><br>An <code>&lt;h1&gt;</code> carries significantly more weight than a <code>&lt;div class="title"&gt;</code>. Wrap your navigation in a <code>&lt;nav&gt;</code>. Wrap articles in <code>&lt;article&gt;</code>. Use a single <code>&lt;h1&gt;</code> per page. These aren't just accessibility best practices — they directly impact how your content is ranked.</p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p>Technical SEO for SPAs is not complicated — it requires discipline at the framework level. Choose SSR or Static Site Generation, commit to semantic HTML, and use structured data markup. The organic traffic rewards are substantial and compounding.</p>
+
+                <hr class="blog-divider">
+
+                <!-- Author Card -->
+                <div class="blog-author-card">
+                    <div class="blog-author-avatar">👨‍💻</div>
+                    <div class="blog-author-info">
+                        <h4>Darshan Patel</h4>
+                        <p>Full-Stack Developer &amp; Digital Architect based in Ahmedabad, India. Building scalable web experiences for 21+ global clients.</p>
+                        <a href="../contact.html" class="blog-author-cta">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post Navigation -->
+                <div class="post-nav-row"><a href="monolith-to-microservices.html" class="post-nav-btn"><i class="fa-solid fa-arrow-left"></i><span><small>Previous</small>From Monolith to Microservices</span></a></div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Reading progress bar
+        const bar = document.getElementById('readingProgress');
+        const content = document.getElementById('blogContent');
+        window.addEventListener('scroll', () => {
+            const start = content.offsetTop;
+            const end = start + content.offsetHeight - window.innerHeight;
+            const progress = Math.min(Math.max((window.scrollY - start) / (end - start) * 100, 0), 100);
+            bar.style.width = progress + '%';
+        });
+
+        // Active TOC highlight
+        const tocLinks = document.querySelectorAll('.blog-toc a');
+        const headings = document.querySelectorAll('.blog-content-body h2');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            headings.forEach(h => {
+                if (window.scrollY >= h.offsetTop - 140) current = h.id;
+            });
+            tocLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Psychology of Micro-Interactions | Darshan Patel Blog</title>
+    <meta name="description" content="How subtle animations and carefully timed feedback loops in your UI can drastically increase conversion rates and user retention.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-bar" id="readingProgress"></div>
+
+    <nav class="floating-nav">
+        <div class="nav-brand">Darshan Patel.</div>
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="../index.html" class="magnetic" data-strength="15">Home</a>
+            <a href="../about.html" class="magnetic" data-strength="15">About Me</a>
+            <a href="../services.html" class="magnetic" data-strength="15">Services</a>
+            <a href="../portfolio.html" class="magnetic" data-strength="15">Portfolio</a>
+            <a href="../blog.html" class="magnetic" data-strength="15" style="color: var(--text-primary); font-weight: 700;">Blog</a>
+            <a href="../contact.html" class="magnetic" data-strength="15">Contact Us</a>
+        </div>
+        <div class="time-module" id="local-time">Loading...</div>
+    </nav>
+
+        <!-- Article -->
+    <main class="bento-container">
+        <div class="blog-hero fade-in">
+            <div class="blog-meta-tags">
+                <span class="blog-category-badge">UX Design</span>
+                <span class="blog-dot">·</span>
+                <span>April 28, 2026</span>
+                <span class="blog-dot">·</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+            </div>
+            <h1 class="blog-post-title">The Psychology of Micro-Interactions</h1>
+            <p class="blog-subtitle">How subtle animations and carefully timed feedback loops in your UI can drastically increase conversion rates and user retention.</p>
+        </div>
+
+        <img src="../assets/micro_interactions.png" alt="The Psychology of Micro-Interactions" class="blog-featured-img fade-in">
+        <div class="blog-article-wrapper">
+
+            <!-- Sticky TOC -->
+            <aside class="blog-toc" id="blogToc">
+                <div class="blog-toc-title">In This Article</div>
+                <ul>
+                    <li><a href="#the-100ms-window">The 100ms Window</a></li>
+<li><a href="#trust-is-built-through-feedback">Trust Is Built Through Feedback</a></li>
+<li><a href="#the-three-rules-of-good-micro-interactions">The Three Rules of Good Micro-Interactions</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <article class="blog-content-body" id="blogContent">
+                <p class="blog-lead">How subtle animations and carefully timed feedback loops in your UI can drastically increase conversion rates and user retention.</p>
+                
+            <h2 id="the-100ms-window">The 100ms Window</h2>
+            <p>Human perception of an interface feeling 'instant' lives within a 100 millisecond window. Responses slower than 100ms are perceived as a lag. Responses slower than 300ms feel broken. This is the battleground where micro-interactions operate.<br><br>A micro-interaction is any single-purpose animation that communicates state: a button depressing on click, a toggle smoothly sliding, a like heart bouncing into life. These aren't decorative — they are <strong>functional feedback signals</strong> that replace the real-world tactile feedback our brains expect.</p>
+            <h2 id="trust-is-built-through-feedback">Trust Is Built Through Feedback</h2>
+            <p>An interface that responds to every user action — even minimally — feels alive and trustworthy. An interface that is silent after a click feels broken, even if the action succeeded in the background.<br><br>In e-commerce, this is critical. Studies show that adding a subtle cart animation (item flying to cart icon) increases purchase completion rates. The animation costs 200ms. The revenue impact is measurable.</p>
+            <div class="blog-callout">
+                <p>📐 Design principle: Every user action deserves a reaction. Silence from the UI is a missed opportunity to build confidence.</p>
+            </div>
+            <h2 id="the-three-rules-of-good-micro-interactions">The Three Rules of Good Micro-Interactions</h2>
+            <p><strong>1. Duration matters.</strong> Entrance animations should be 200–400ms. Exit animations should be faster (150–250ms). Users want to see things appear with some grace, but they never want to wait to dismiss something.<br><br><strong>2. Easing is everything.</strong> Linear animations look mechanical and cheap. Use <code>cubic-bezier</code> easing — specifically ease-out for entrances (fast then slow) and ease-in for exits (slow then fast). This mirrors real-world physics.<br><br><strong>3. Don't animate everything.</strong> Animation should guide attention, not compete for it. If everything moves, nothing communicates.</p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p>Micro-interactions are the difference between an interface that feels like a tool and one that feels like an experience. They won't save a bad product, but in a competitive market, they are often the reason a user chooses yours over an equivalent alternative.</p>
+
+                <hr class="blog-divider">
+
+                <!-- Author Card -->
+                <div class="blog-author-card">
+                    <div class="blog-author-avatar">👨‍💻</div>
+                    <div class="blog-author-info">
+                        <h4>Darshan Patel</h4>
+                        <p>Full-Stack Developer &amp; Digital Architect based in Ahmedabad, India. Building scalable web experiences for 21+ global clients.</p>
+                        <a href="../contact.html" class="blog-author-cta">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Post Navigation -->
+                <div class="post-nav-row"><a href="optimizing-react-rendering.html" class="post-nav-btn"><i class="fa-solid fa-arrow-left"></i><span><small>Previous</small>Optimizing React Rendering</span></a><a href="monolith-to-microservices.html" class="post-nav-btn post-nav-btn--next"><span><small>Next</small>From Monolith to Microservices</span><i class="fa-solid fa-arrow-right"></i></a></div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Darshan Patel. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Reading progress bar
+        const bar = document.getElementById('readingProgress');
+        const content = document.getElementById('blogContent');
+        window.addEventListener('scroll', () => {
+            const start = content.offsetTop;
+            const end = start + content.offsetHeight - window.innerHeight;
+            const progress = Math.min(Math.max((window.scrollY - start) / (end - start) * 100, 0), 100);
+            bar.style.width = progress + '%';
+        });
+
+        // Active TOC highlight
+        const tocLinks = document.querySelectorAll('.blog-toc a');
+        const headings = document.querySelectorAll('.blog-content-body h2');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            headings.forEach(h => {
+                if (window.scrollY >= h.offsetTop - 140) current = h.id;
+            });
+            tocLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>
