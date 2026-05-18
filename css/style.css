@@ -790,7 +790,7 @@ footer {
 
 /* Hamburger Menu Button */
 .hamburger {
-    display: none;
+    display: none !important;
     cursor: pointer;
     font-size: 1.25rem;
     color: var(--text-primary);
@@ -831,7 +831,7 @@ footer {
         box-shadow: none !important;
     }
     .hamburger {
-        display: block;
+        display: block !important;
     }
     .nav-links { 
         position: fixed;
