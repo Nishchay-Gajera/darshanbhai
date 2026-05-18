@@ -5,27 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Darshan Patel</title>
-    <meta name="description" content="Explore the professional services offered by Darshan Patel, including Custom Web Development, Enterprise WordPress Solutions, and Technical SEO Strategy.">
-    <meta name="keywords" content="Web Development Services, Custom Web Apps, Enterprise WordPress, Technical SEO, Full-Stack Services">
-    <meta name="author" content="Darshan Patel">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://darshanpatel.info/services.html">
-    <meta property="og:title" content="Services | Darshan Patel">
-    <meta property="og:description" content="Explore the professional services offered by Darshan Patel, including Custom Web Development, Enterprise WordPress Solutions, and Technical SEO Strategy.">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://darshanpatel.info/services.html">
-    <meta name="twitter:title" content="Services | Darshan Patel">
-    <meta name="twitter:description" content="Explore the professional services offered by Darshan Patel, including Custom Web Development, Enterprise WordPress Solutions, and Technical SEO Strategy.">
-    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .service-page-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-features {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--bento-border);
+        }
+    </style>
 </head>
 
 <body>
@@ -45,16 +41,16 @@
     </nav>
 
     <main class="bento-container">
-        <div class="section-title text-center fade-in" style="text-align: center; margin-bottom: 60px;">
-            <p class="section-eyebrow">My Expertise</p>
-            <h1 class="page-title">Engineering <span class="accent-text">Solutions.</span></h1>
-            <p class="page-subtitle" style="margin-top: 15px; max-width: 650px; margin-inline: auto;">
-                Comprehensive technical architectures and design systems built to scale your business and outpace the competition.
-            </p>
+        <div class="bento-module fade-in"
+            style="background: linear-gradient(135deg, #ffffff 0%, #fffcf9 100%); text-align: center; padding: 60px 20px;">
+            <h1 style="font-size: 4rem; margin-bottom: 20px;">Engineering <span class="accent-text">Solutions.</span>
+            </h1>
+            <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Comprehensive
+                technical architectures and design systems built to scale your business and outpace the competition.</p>
         </div>
 
         <div class="services-bento"
-            style="gap: 30px; margin-top: 20px;">
+            style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 20px;">
             <div class="bento-box service-page-item fade-in">
                 <div>
                     <i class="fa-solid fa-laptop-code"
