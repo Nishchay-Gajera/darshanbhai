@@ -821,12 +821,13 @@ footer {
         width: 92%;
         top: 15px;
         z-index: 1001;
-        transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     }
     body.menu-open .floating-nav {
         background: transparent !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
         border-color: transparent !important;
         box-shadow: none !important;
     }
@@ -893,10 +894,21 @@ footer {
     .hero-module, .location-module, .stack-module, .exp-module, .philosophy-module, .service-bento-card, .bento-box {
         padding: 25px;
     }
-    .contact-wrapper { padding: 0; }
+    .contact-wrapper { 
+        padding: 25px; 
+        gap: 30px; 
+    }
+    .direct-contact {
+        padding: 12px 20px;
+        font-size: 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        word-break: break-all;
+    }
     
     body {
         overflow-x: hidden; /* Prevent horizontal scrolling */
+        padding: 20px 4%;
     }
     img, svg, video {
         max-width: 100%;
@@ -1026,5 +1038,41 @@ footer {
 @media(max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Custom premium scrollbar for horizontal overflow elements */
+.graph-wrapper::-webkit-scrollbar,
+.ide-body::-webkit-scrollbar {
+    height: 6px;
+}
+
+.graph-wrapper::-webkit-scrollbar-track,
+.ide-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.graph-wrapper::-webkit-scrollbar-thumb,
+.ide-body::-webkit-scrollbar-thumb {
+    background: var(--bento-border);
+    border-radius: 100px;
+}
+
+.graph-wrapper::-webkit-scrollbar-thumb:hover,
+.ide-body::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Direct Contact responsiveness overrides */
+@media (max-width: 480px) {
+    .direct-contact {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px 18px !important;
+        text-align: center !important;
+    }
+    .direct-contact p {
+        font-size: 0.95rem !important;
+        word-break: break-all !important;
     }
 }
