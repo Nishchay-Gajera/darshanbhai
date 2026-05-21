@@ -419,3 +419,19 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeTimer = setTimeout(drawGraph, 200);
     });
 });
+
+// Register Service Worker for Extreme Caching, Instant Page Loads, and Offline Capability
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Resolve Service Worker path dynamically based on whether we are in a subdirectory
+        const isSubdirectory = window.location.pathname.includes('/blog/') || window.location.pathname.includes('/portfolio/');
+        const swPath = isSubdirectory ? '../sw.js' : 'sw.js';
+        navigator.serviceWorker.register(swPath)
+            .then(reg => {
+                console.log('[Service Worker] Active scope:', reg.scope);
+            })
+            .catch(err => {
+                console.error('[Service Worker] Registration failed:', err);
+            });
+    });
+}

@@ -244,14 +244,22 @@
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1a1a2e, #ea580c);
+    background: var(--bento-bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
     flex-shrink: 0;
-    border: 3px solid var(--bento-border);
+    border: none;
     overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+}
+
+.blog-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
 }
 
 .blog-author-info h4 {

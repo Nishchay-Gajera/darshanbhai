@@ -200,7 +200,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-orange), #ff9a44);
+            background: transparent;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
@@ -210,6 +210,14 @@
             font-weight: 800;
             border: 4px solid var(--bento-bg);
             box-shadow: 0 10px 30px rgba(234, 88, 12, 0.2);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
         }
 
         .profile-bento h1 {
@@ -947,6 +955,15 @@
         width: 10px !important;
         height: 10px !important;
         top: 6px !important;
+    }
+    #tab-terminal {
+        padding: 16px 12px !important;
+        font-size: 0.78rem !important;
+        min-height: 250px !important;
+    }
+    .terminal-input-line span,
+    .terminal-input {
+        font-size: 0.78rem !important;
     }
 }
     
