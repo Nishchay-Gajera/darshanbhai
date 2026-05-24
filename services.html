@@ -51,15 +51,14 @@
 
     <main class="bento-container">
         <div class="bento-module fade-in"
-            style="background: linear-gradient(135deg, #ffffff 0%, #fffcf9 100%); text-align: center; padding: 60px 20px;">
-            <h1 style="font-size: 4rem; margin-bottom: 20px;">Engineering <span class="accent-text">Solutions.</span>
-            </h1>
-            <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Comprehensive
+            style="background: linear-gradient(135deg, #ffffff 0%, #fffcf9 100%); text-align: center; padding: clamp(40px, 8vw, 60px) clamp(15px, 4vw, 20px);">
+            <h1 class="page-title" style="font-size: clamp(2.2rem, 8vw, 4rem); margin-bottom: 20px;">Engineering <span class="accent-text">Solutions.</span></h1>
+            <p class="page-subtitle" style="font-size: clamp(1rem, 3vw, 1.2rem); max-width: 600px; margin: 0 auto; color: var(--text-muted);">Comprehensive
                 technical architectures and design systems built to scale your business and outpace the competition.</p>
         </div>
 
         <div class="services-bento"
-            style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 20px;">
+            style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 30px; margin-top: 20px;">
             <div class="bento-box service-page-item fade-in">
                 <div>
                     <i class="fa-solid fa-laptop-code"
