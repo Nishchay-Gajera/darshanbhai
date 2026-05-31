@@ -184,16 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
             `,
             about: () => `
                 <p>Hello! I am <span style="color: #3b82f6; font-weight: bold;">Darshan Patel</span>.</p>
-                <p>I am a <span style="color: #f59e0b;">Senior Full-Stack Engineer</span> based in Ahmedabad, India, with over 10 years of experience building high-performance, conversion-focused websites, custom plugins, and responsive web applications.</p>
-                <p>I bridge the gap between technical execution and business value. I design elegant, scalable architecture that helps businesses scale effortlessly.</p>
+                <p>I am a <span style="color: #f59e0b;">Freelance Consultant & Full-Stack Developer</span> based in Ahmedabad, India. I specialize in designing and developing scalable backend systems, custom business websites, eCommerce platforms, and cloud infrastructure.</p>
+                <p>With a strong track record of serving 20+ global clients, I partner with businesses to establish, optimize, and scale their online presence through high-performance software engineering, cloud solutions, and digital growth strategies.</p>
             `,
             skills: () => `
                 <div style="color: #60a5fa; font-weight: bold; margin-bottom: 5px;">Core Tech Competencies:</div>
                 <div style="display: grid; grid-template-columns: 120px 1fr; gap: 5px; margin-left: 10px;">
-                    <span style="color: #a78bfa; font-weight: bold;">Frontend:</span> <span>React, JavaScript (ES6+), HTML5, CSS3, TailwindCSS</span>
-                    <span style="color: #a78bfa; font-weight: bold;">Backend:</span> <span>Node.js, Express, REST APIs, PHP, MySQL</span>
-                    <span style="color: #a78bfa; font-weight: bold;">CMS/Platform:</span> <span>WordPress, Custom Theme & Plugin Development, WooCommerce</span>
-                    <span style="color: #a78bfa; font-weight: bold;">Systems/SEO:</span> <span>Technical SEO, Website Performance Tuning, AWS Infrastructure</span>
+                    <span style="color: #a78bfa; font-weight: bold;">Languages:</span> <span>TypeScript, JavaScript, PHP</span>
+                    <span style="color: #a78bfa; font-weight: bold;">Frontend:</span> <span>React.js, HTML5, CSS3</span>
+                    <span style="color: #a78bfa; font-weight: bold;">Backend:</span> <span>Node.js, NestJS, RESTful APIs</span>
+                    <span style="color: #a78bfa; font-weight: bold;">Databases:</span> <span>MongoDB, MySQL</span>
+                    <span style="color: #a78bfa; font-weight: bold;">Platforms/CMS:</span> <span>WordPress, Google Workspace</span>
+                    <span style="color: #a78bfa; font-weight: bold;">DevOps/Growth:</span> <span>AWS Cloud, SEO, SMM</span>
                 </div>
             `,
             projects: () => `
