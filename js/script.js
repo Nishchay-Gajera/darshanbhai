@@ -370,57 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* --- Script from about.html --- */
-// Generate Premium Github-inspired graph dynamically based on viewport size
-document.addEventListener('DOMContentLoaded', () => {
-    const graph = document.getElementById('contribGraph');
-    if (!graph) return;
 
-    function drawGraph() {
-        graph.innerHTML = '';
-        
-        let weeks = 48;
-        if (window.innerWidth < 360) {
-            weeks = 13; // Super clean fit for very narrow screens (prevents scroll/overflow entirely)
-        } else if (window.innerWidth < 480) {
-            weeks = 18; // Clean fit for narrow mobile screens
-        } else if (window.innerWidth < 768) {
-            weeks = 28; // Clean fit for standard mobile/tablets
-        } else if (window.innerWidth < 1024) {
-            weeks = 36; // Clean fit for larger tablets
-        }
-
-        const classes = ['', 'sq-1', 'sq-2', 'sq-3', 'sq-4'];
-
-        for (let i = 0; i < weeks; i++) {
-            const col = document.createElement('div');
-            col.className = 'graph-col';
-
-            for (let j = 0; j < 7; j++) {
-                let rand = Math.random();
-                let level = 0;
-                if (rand > 0.4) level = 1;
-                if (rand > 0.7) level = 2;
-                if (rand > 0.85) level = 3;
-                if (rand > 0.95) level = 4;
-
-                const square = document.createElement('div');
-                square.className = `graph-sq ${classes[level]}`;
-                col.appendChild(square);
-            }
-            graph.appendChild(col);
-        }
-    }
-
-    drawGraph();
-
-    // Handle redraw on resize with simple debounce
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(drawGraph, 200);
-    });
-});
 
 // Register Service Worker for Extreme Caching, Instant Page Loads, and Offline Capability
 if ('serviceWorker' in navigator) {

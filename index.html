@@ -66,11 +66,11 @@
             </div>
 
             <h1
-                style="position: relative; z-index: 2; margin-bottom: 15px; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1;">
-                Senior Full-Stack<br>
+                style="position: relative; z-index: 2; margin-bottom: 15px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -1px;">
+                Freelance Consultant &<br>
                 <span class="accent-text" style="display: inline-block; position: relative;">
-                    Engineer.
-                    <svg style="position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; z-index: -1; opacity: 0.3;"
+                    Full-Stack Developer.
+                    <svg style="position: absolute; bottom: -5px; left: 0; width: 100%; height: 12px; z-index: -1; opacity: 0.3;"
                         viewBox="0 0 200 20" preserveAspectRatio="none">
                         <path d="M0,15 Q100,0 200,15" fill="none" stroke="var(--accent-orange)" stroke-width="8"
                             stroke-linecap="round" />
@@ -191,18 +191,15 @@
 
             <!-- Category Filter Tabs -->
             <div class="stack-filter category-filter" id="stackFilter"
-                style="margin-bottom: var(--element-spacing); justify-content: center;">
+                style="margin-bottom: var(--element-spacing); justify-content: center; flex-wrap: wrap; gap: 10px;">
                 <button class="filter-btn cat-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn cat-btn" data-filter="industrial"><i class="fa-solid fa-industry"></i>
-                    Industrial & Trading</button>
-                <button class="filter-btn cat-btn" data-filter="ecommerce"><i class="fa-solid fa-cart-shopping"></i>
-                    E-Commerce</button>
-                <button class="filter-btn cat-btn" data-filter="corporate"><i class="fa-solid fa-building"></i>
-                    Corporate</button>
-                <button class="filter-btn cat-btn" data-filter="services"><i class="fa-solid fa-concierge-bell"></i>
-                    Services</button>
-                <button class="filter-btn cat-btn" data-filter="digital"><i class="fa-solid fa-laptop-code"></i> Digital
-                    Agency</button>
+                <button class="filter-btn cat-btn" data-filter="ecommerce"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</button>
+                <button class="filter-btn cat-btn" data-filter="manufacturing"><i class="fa-solid fa-industry"></i> Manufacturing</button>
+                <button class="filter-btn cat-btn" data-filter="cosmetics"><i class="fa-solid fa-sparkles"></i> Cosmetics</button>
+                <button class="filter-btn cat-btn" data-filter="events"><i class="fa-solid fa-calendar-check"></i> Events</button>
+                <button class="filter-btn cat-btn" data-filter="finance"><i class="fa-solid fa-coins"></i> Finance</button>
+                <button class="filter-btn cat-btn" data-filter="travel"><i class="fa-solid fa-plane-departure"></i> Travel</button>
+                <button class="filter-btn cat-btn" data-filter="healthcare"><i class="fa-solid fa-heart-pulse"></i> Healthcare</button>
             </div>
 
             <!-- Project Cards Grid -->
@@ -245,13 +242,13 @@
                 </div>
 
                 <!-- Card 3: Ravi Fincorp -->
-                <div class="grid-card" data-category="corporate">
+                <div class="grid-card" data-category="finance">
                     <div class="gc-img-wrapper">
                         <img src="assets/ravi-fincorp_ss.png" alt="Ravi Fincorp"
                             onerror="this.parentElement.style.background='linear-gradient(135deg,#1c0a00,#7c2d12)';this.remove();">
                     </div>
                     <div class="gc-info">
-                        <div class="gc-cat">Corporate</div>
+                        <div class="gc-cat">Finance</div>
                         <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Ravi Fincorp</h3>
                         <p class="gc-desc">Clean, trustworthy financial portal with interactive loan calculators and
                             multi-step applications.</p>
@@ -263,13 +260,13 @@
                 </div>
 
                 <!-- Card 4: Gayatri Refrigeration -->
-                <div class="grid-card" data-category="industrial">
+                <div class="grid-card" data-category="manufacturing">
                     <div class="gc-img-wrapper">
                         <img src="assets/gayatri-refrigeration_ss.png" alt="Gayatri Refrigeration"
                             onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                     </div>
                     <div class="gc-info">
-                        <div class="gc-cat">Industrial & Trading</div>
+                        <div class="gc-cat">Manufacturing</div>
                         <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Gayatri Refrigeration</h3>
                         <p class="gc-desc">Commercial cold storage and industrial refrigeration solutions provider with
                             enterprise-grade B2B digital presence.</p>
@@ -281,13 +278,13 @@
                 </div>
 
                 <!-- Card 5: Trips N Joy -->
-                <div class="grid-card" data-category="services">
+                <div class="grid-card" data-category="travel">
                     <div class="gc-img-wrapper">
                         <img src="assets/trips-njoy_ss.png" alt="Trips N Joy"
                             onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)';this.remove();">
                     </div>
                     <div class="gc-info">
-                        <div class="gc-cat">Services</div>
+                        <div class="gc-cat">Travel</div>
                         <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Trips N Joy</h3>
                         <p class="gc-desc">A vibrant travel experience platform with curated domestic &amp;
                             international
@@ -300,13 +297,13 @@
                 </div>
 
                 <!-- Card 6: Bright Digital Agency -->
-                <div class="grid-card" data-category="digital">
+                <div class="grid-card" data-category="events">
                     <div class="gc-img-wrapper">
                         <img src="assets/bright-digital-agency_ss.png" alt="Bright Digital Agency"
                             onerror="this.parentElement.style.background='linear-gradient(135deg,#374151,#111827)';this.remove();">
                     </div>
                     <div class="gc-info">
-                        <div class="gc-cat">Digital Agency</div>
+                        <div class="gc-cat">Events &amp; SMM</div>
                         <h3 class="gc-title" style="margin-bottom:15px; font-size:1.6rem;">Bright Digital</h3>
                         <p class="gc-desc">Highly interactive, animated web experience utilizing GSAP for smooth
                             scrolling and micro-interactions.</p>
