@@ -12,11 +12,11 @@ const ASSETS_TO_CACHE = [
   '/css/portfolio-item.css',
   '/css/blog-post.css',
   '/js/script.js',
-  '/assets/darshan-patel.png',
-  '/assets/micro_interactions.png',
-  '/assets/microservices.png',
-  '/assets/react_rendering.png',
-  '/assets/tech_seo.png'
+  '/assets/darshan-patel.webp',
+  '/assets/micro_interactions.webp',
+  '/assets/microservices.webp',
+  '/assets/react_rendering.webp',
+  '/assets/tech_seo.webp'
 ];
 
 // Install Event - Pre-cache critical static shell
@@ -55,7 +55,7 @@ self.addEventListener('fetch', event => {
   if (event.request.url.startsWith(self.location.origin)) {
     
     // Cache strategy: Cache-First for local images
-    if (requestUrl.pathname.includes('/assets/') || requestUrl.pathname.endsWith('.png') || requestUrl.pathname.endsWith('.jpg') || requestUrl.pathname.endsWith('.svg')) {
+    if (requestUrl.pathname.includes('/assets/') || requestUrl.pathname.endsWith('.webp') || requestUrl.pathname.endsWith('.png') || requestUrl.pathname.endsWith('.jpg') || requestUrl.pathname.endsWith('.svg')) {
       event.respondWith(
         caches.open(CACHE_NAME).then(cache => {
           return cache.match(event.request).then(response => {
