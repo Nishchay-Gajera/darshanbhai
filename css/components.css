@@ -1223,4 +1223,111 @@
     max-width: 520px;
     margin: 0 auto;
     width: 100%;
+}
+
+/* --- LOGO CAROUSEL SECTION --- */
+.brands-section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.logo-carousel-box {
+    position: relative;
+    padding: 35px 0 !important;
+    overflow: hidden;
+    background: var(--bento-bg);
+    border: 1px solid var(--bento-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Gradient overlays for smooth fading edges */
+.logo-carousel-box::before,
+.logo-carousel-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-carousel-box::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bento-bg) 0%, transparent 100%);
+}
+
+.logo-carousel-box::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bento-bg) 0%, transparent 100%);
+}
+
+.logo-carousel-track-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.logo-carousel-track {
+    display: flex;
+    align-items: center;
+    animation: scrollLogos 30s linear infinite;
+    width: max-content;
+}
+
+/* Animation */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover to allow readable interaction */
+.logo-carousel-track-wrapper:hover .logo-carousel-track {
+    animation-play-state: paused;
+}
+
+.logo-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 50px;
+    padding: 0 25px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo-slide img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(55%);
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-slide:hover img {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+    .logo-carousel-box {
+        padding: 20px 0 !important;
+    }
+    .logo-slide {
+        width: 130px;
+        height: 38px;
+        padding: 0 15px;
+    }
+    .logo-carousel-box::before,
+    .logo-carousel-box::after {
+        width: 80px;
+    }
 }
